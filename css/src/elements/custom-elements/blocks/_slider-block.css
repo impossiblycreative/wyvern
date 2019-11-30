@@ -6,19 +6,6 @@
         padding: 4rem 0 0;
     }
 
-    &::-webkit-scrollbar {
-        height: 10px;
-        height: 1rem;
-    }
-
-    &::-webkit-scrollbar-track {
-        background-color: var(--slider-scrollbar-track-color);
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: var(--slider-scrollbar-thumb-color);
-    }
-
     .slides {
         border-radius: var(--border-radius);
         display: flex;
@@ -28,6 +15,19 @@
         padding-bottom: 20px;
         padding-bottom: 2rem;
         scroll-behavior: smooth;
+
+        &::-webkit-scrollbar {
+            height: 10px;
+            height: 1rem;
+        }
+    
+        &::-webkit-scrollbar-track {
+            background-color: var(--slider-scrollbar-track-color);
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--slider-scrollbar-thumb-color);
+        }
 
         > * {
             align-items: center;
