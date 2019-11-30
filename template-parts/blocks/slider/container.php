@@ -85,4 +85,6 @@ if ( $slide_query->have_posts() ) {
         }
     </script>
 <?php
+} else {
+    esc_html_e( 'No slides available.', 'wyvern' );
 }

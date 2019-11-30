@@ -10,6 +10,7 @@
                 nonce: nonce
             },
             success: function( response ) {
+                console.log(response);
                 $( '.cookie-bar' ).fadeOut();
             }
         });

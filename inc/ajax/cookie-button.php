@@ -9,8 +9,13 @@ function wyvern_cookie_button() {
     // Set the cookie for a year
     $expires = strtotime('+1 year');
 
-    if ( !isset( $_COOKIE['eotg_cookie_consent'] ) ) {
-        setcookie( 'eotg_cookie_consent', 'okay', $expires, '/', $_SERVER['HTTP_HOST'] );
+    // Set up the cookie name
+    $site_title = get_bloginfo( 'name' );
+    $site_title = sanitize_title( $site_title );
+    $cookie_name = $site_title . '_cookie_consent';
+
+    if ( !isset( $_COOKIE[$cookie_name] ) ) {
+        setcookie( $cookie_name, 'okay', $expires, '/', $_SERVER['HTTP_HOST'] );
     }
 
     die();

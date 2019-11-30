@@ -1,0 +1,30 @@
+.post {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-style) var(--box-shadow-color), var(--box-shadow-style-alt) var(--box-shadow-color-alt);
+}
+
+.post-title {
+    margin: 0 0 10px;
+    margin: 0 0 1rem;
+
+    .post-card & {
+        font-size: calc(var(--s2) * 0.85);
+    }
+
+    a {
+        color: var(--text-color-dark);
+        text-decoration: none;
+        transition: color var(--linear);
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: var(--text-color-medium);
+        }
+    }
+}
+
+.post-excerpt {
+    line-height: 1.75;
+    margin-top: 0;
+}

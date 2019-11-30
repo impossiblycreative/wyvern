@@ -1,5 +1,8 @@
 <?php
-    $has_cookie = isset( $_COOKIE['eotg_cookie_consent'] );
+    $site_title = get_bloginfo( 'name' );
+    $site_title = sanitize_title( $site_title );
+	$cookie_name = $site_title . '_cookie_consent';
+    $has_cookie = isset( $_COOKIE[$cookie_name] );
 
     $nonce = wp_create_nonce( 'wyvern_cookie_button_nonce' );
 

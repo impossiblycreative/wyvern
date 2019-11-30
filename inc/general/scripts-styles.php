@@ -17,7 +17,11 @@ function wyvern_load_theme_assets() {
 	wp_enqueue_script( 'wyvern-scripts', trailingslashit( get_template_directory_uri() ) . 'js/scripts.js', array( 'jquery' ), NULL, true );
 
 	// Cookie Bar - Only load if the cookie isn't set
-	if ( !isset( $_COOKIE['eotg_cookie_consent'] ) ) {
+    $site_title = get_bloginfo( 'name' );
+    $site_title = sanitize_title( $site_title );
+	$cookie_name = $site_title . '_cookie_consent';
+	
+	if ( ! isset( $_COOKIE[$cookie_name] ) ) {
 		wp_enqueue_script( 'wyvern-cookie-button', trailingslashit( get_template_directory_uri() ) . 'js/cookie-button.js', array( 'jquery' ), NULL, true );
 		wp_localize_script( 'wyvern-cookie-button', 'cookieButton', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 	}

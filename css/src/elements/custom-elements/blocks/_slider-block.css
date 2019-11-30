@@ -6,12 +6,21 @@
         padding: 4rem 0 0;
     }
 
-    .archive & {
-        padding-top: 0;
+    &::-webkit-scrollbar {
+        height: 10px;
+        height: 1rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--slider-scrollbar-track-color);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--slider-scrollbar-thumb-color);
     }
 
     .slides {
-        border-radius: 10px;
+        border-radius: var(--border-radius);
         display: flex;
         min-width: 0px;
         overflow-x: auto;
@@ -95,7 +104,7 @@
 
         a {
             background: var(--slider-navigation-button-color);
-            border-radius: 3px;
+            border-radius: var(--border-radius-tiny);
             display: block;
             height: 10px;
             font-size: 10px;
@@ -103,7 +112,7 @@
             transition: background-color var(--linear);
 
             &.current {
-                background: var(--slider-navigation-button-color-hover);
+                background: var(--slider-navigation-button-color-current);
             }
 
             &:hover,

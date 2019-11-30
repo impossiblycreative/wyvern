@@ -1,0 +1,33 @@
+.cookie-bar {
+    align-items: center;
+    background: var(--cookie-bar-color);
+    bottom: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    left: 0;
+    padding: 20px;
+    padding: 2rem;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 1000;
+
+    &.hide {
+        display: none;
+    }
+
+    .cookie-bar-text {
+        line-height: 1;
+        margin: 0 20px;
+        margin: 0 2rem;
+    }
+
+    button,
+    .button {
+        &:first-of-type {
+            margin-right: 20px;
+            margin-right: 2rem;
+        }
+    }
+}

@@ -90,7 +90,10 @@
 	--slide-background-color: var(--white);
 	--slide-text-color: var(--black);
 	--slider-navigation-button-color: var(--black);
-	--slider-navigation-button-color-hover: var(--white);
+	--slider-navigation-button-color-current: var(--grey);
+	--slider-navigation-button-color-hover: var(--grey);
+	--slider-scrollbar-track-color: var(--grey);
+	--slider-scrollbar-thumb-color: var(--black);
 
 	/* Post Card Block & Cards */
 	--post-card-block-background-color: var(--black);
