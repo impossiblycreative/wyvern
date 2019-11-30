@@ -1,0 +1,65 @@
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+.page-content {
+    display: flex;
+    flex-flow: row wrap;
+
+    @media (--menu-query) {
+        padding: 20px;
+        padding: 2rem;
+    }
+
+    @media (--slider-query) {
+        padding: 60px 0;
+        padding: 6rem 0;
+    }
+}
+
+.main {
+    flex: 0 1 100%;
+
+    @media (--menu-query) {
+        flex: 0 1 72%;
+        margin-right: 3%;
+
+        .home &,
+        .page & {
+            flex: 0 1 100%;
+            margin-right: 0;
+        }
+
+        .home & {
+            align-items: center;
+            display: flex;
+            flex-flow: row wrap;
+            min-height: 100vh;
+
+            .home-block {
+                flex: 0 1 100%;
+            }
+        }
+    }
+}
+
+.sidebar {
+    flex: 0 1 100%;
+
+    @media (--menu-query) {
+        flex: 0 1 25%;
+        margin: 0 auto;
+        max-width: 300px;
+    }
+}
+
+.posts {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 20px 0;
+    padding: 2rem 0;
+
+    @media (--menu-query) {
+        padding: 0;
+    }
+}

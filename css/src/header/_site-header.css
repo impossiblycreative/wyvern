@@ -1,0 +1,35 @@
+.site-header {
+    background: var(--site-header-background-color);
+    padding: 20px 10px;
+    padding: 2rem 1rem;
+    position: relative;
+
+    .wrapper {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .site-title {
+        margin: 0;
+        flex: 0 1 100%;
+
+        @media (--menu-button-query) {
+            flex: 0 1 250px;
+        }
+    }
+
+    .site-logo-link {
+        display: block;
+        flex: 0 1 100%;
+
+        @media (--menu-button-query) {
+            flex: 0 1 250px;
+        }
+    }
+
+    .site-logo {
+        border-radius: 0;
+    }
+}

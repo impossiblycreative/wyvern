@@ -1,0 +1,33 @@
+.off-canvas-container {
+    .menu-toggle {
+        display: block;
+        margin: 10px 0;
+        margin: 1rem 0;
+        width: 100%;
+    }
+
+    .menu {
+        margin: 20px 0 0;
+        margin: 2rem 0 0;
+        padding: 0;
+
+        .menu-item {
+            margin-bottom: 20px;
+            margin-bottom: 2rem;
+
+            a,
+            > span {
+                color: var(--off-canvas-nav-item-color);
+                text-decoration: none;
+                text-transform: uppercase;
+                transition: color var(--linear);
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: var(--off-canvas-nav-item-color-hover);
+                }
+            }
+        }
+    }
+}

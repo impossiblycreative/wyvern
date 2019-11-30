@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * Load theme assets
+ */
+function wyvern_load_theme_assets() {
+	// Load main CSS file
+	wp_enqueue_style( 'wyvern-styles', get_stylesheet_directory_uri() . '/css/build/main.min.css', NULL, '1.0.0', 'all' );
+
+	// Google Fonts
+    //wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Josefin+Sans:400,700&display=swap' );
+
+	// Font Awesome
+	wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/8ca253b275.js', NULL, NULL, false );
+
+	// Load main JS file
+	wp_enqueue_script( 'wyvern-scripts', trailingslashit( get_template_directory_uri() ) . 'js/scripts.js', array( 'jquery' ), NULL, true );
+
+	// Cookie Bar - Only load if the cookie isn't set
+	if ( !isset( $_COOKIE['eotg_cookie_consent'] ) ) {
+		wp_enqueue_script( 'wyvern-cookie-button', trailingslashit( get_template_directory_uri() ) . 'js/cookie-button.js', array( 'jquery' ), NULL, true );
+		wp_localize_script( 'wyvern-cookie-button', 'cookieButton', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+	}
+
+	// Post Block Filters - only on the home page...for now
+	if ( is_front_page() ) {
+		// Enqueue the script
+		wp_enqueue_script( 'wyvern-posts-block-filters', trailingslashit( get_template_directory_uri() ) . 'js/posts-block-filters.js', array( 'jquery' ), NULL, true );
+
+		// Localize the scripts
+		wp_localize_script( 'wyvern-posts-block-filters', 'categoriesFilter', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+	}
+
+	// Like Button Scripts - Only needed on single posts
+	if ( is_single() ) {
+		// Enqueue the scripts
+		wp_enqueue_script( 'wyvern-likes', trailingslashit( get_template_directory_uri() ) . 'js/likes.js', array( 'jquery' ), NULL, true );
+		wp_enqueue_script( 'wyvern-progress-bar', trailingslashit( get_template_directory_uri() ) . 'js/progress-bar.js', array( 'jquery' ), NULL, true );
+
+		// Set up our customizer objects
+		$wyvern_options = array(
+			'progress_bar_icon'   => get_theme_mod( 'progress_bar_icon', false ),
+		);
+
+		// Localize the scripts
+		wp_localize_script( 'wyvern-likes', 'likeButton', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+		wp_localize_script( 'wyvern-progress-bar', 'wyvern_options', $wyvern_options );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'wyvern_load_theme_assets' );
+
+/**
+ * Load editor assets
+ */
+function wyvern_load_editor_assets() {
+
+	// Load main CSS file
+	wp_enqueue_style( 'wyvern-editor-styles', get_template_directory_uri() . '/css/editor-style.css', NULL, '1.0.0', 'all' );
+}
+add_action( 'enqueue_block_editor_assets', 'wyvern_load_editor_assets' );

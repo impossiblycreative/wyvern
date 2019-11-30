@@ -1,0 +1,29 @@
+.entry-content {
+    background: var(--white);
+    padding: 20px 20px 0;
+    padding: 2rem 2rem 0;
+
+    .not-found & {
+        border-bottom-left-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+        padding: 20px;
+        padding: 2rem;
+    }
+
+    .page & {
+        padding: 20px;
+        padding: 2rem;
+
+        @media (--menu-query) {
+            border-radius: var(--border-radius);
+        }
+    }
+
+    > :first-child {
+        margin-top: 0;
+    }
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}

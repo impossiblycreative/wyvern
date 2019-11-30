@@ -1,0 +1,112 @@
+.header-navigation {
+    display: flex;
+    flex: 0 1 100%;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-top: 1rem;
+
+    @media (--menu-button-query) {
+        flex: 0 1 calc(100% - 250px);
+        margin-top: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        flex: 0 1 100%;
+
+        @media (--menu-button-query) {
+            display: inline-block;
+            flex-basis: auto;
+        }
+
+        @media (--menu-query) {
+            display: none;
+        }
+    }
+
+    .main-menu-container {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+
+        .menu {
+            align-items: center;
+            display: none;
+            flex-flow: row wrap;
+            justify-content: flex-end;
+            margin: 0 20px 0 0;
+            margin: 0 2rem 0 0;
+            padding: 0;
+
+            @media (--menu-query) {
+                display: flex;
+            }
+    
+            .menu-item {
+                list-style-type: none;
+                margin: 0 5px;
+                margin: 0 0.5rem;
+                padding: 0;
+    
+                a,
+                > span {
+                    color: var(--nav-item-color);
+                    display: block;
+                    font-family: var(--font-special);
+                    font-size: 16px;
+                    font-size: 1.6rem;
+                    margin-top: 5px;
+                    margin-top: 0.5rem; /* Adjustment for font to maintain vertical centering */
+                    position: relative;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    transition: color var(--linear);
+
+                    &:after {
+                        background: var(--nav-item-color-hover);
+                        border-radius: var(--border-radius-tiny);
+                        bottom: -7px;
+                        content: '';
+                        height: 5px;
+                        left: 0;
+                        position: absolute;
+                        transform: scale3d(0, 1, 1);
+                        transition: transform var(--cubic);
+                        width: 100%;
+                    }
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        color: var(--nav-item-color-hover);
+
+                        &:after {
+                            transform: scale3d(1, 1, 1);
+                        }
+                    }
+                }
+
+                &.current-menu-item {
+                    a,
+                    > span {
+                        color: var(--nav-item-color-hover);
+
+                        &:after {
+                            transform: scale3d(1, 1, 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        .subscribe-button {
+            display: none;
+
+            @media (--menu-query) {
+                display: block;
+            }
+        }
+    }
+}

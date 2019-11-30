@@ -1,0 +1,24 @@
+/**
+ * Custom Media Queries
+ * Works like Custom Properties, except for media queries.
+ *
+ * @link: https://drafts.csswg.org/mediaqueries-5/#custom-mq
+ **/
+
+/* 455px */
+@custom-media --newsletter-button-query screen and (min-width: 28.438em);
+
+/* 601px */
+@custom-media --menu-button-query screen and (min-width: 37.563em);
+
+/* 769px */
+@custom-media --content-query screen and (min-width: 48.063em);
+
+/* 1025px */
+@custom-media --menu-query screen and (min-width: 64.063em);
+
+/* 1500px */
+@custom-media --slider-query screen and (min-width: 93.750em);
+
+/* 1801px */
+@custom-media --big-screen-query screen and (min-width: 112.563em);

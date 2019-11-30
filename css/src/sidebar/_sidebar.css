@@ -1,0 +1,15 @@
+.sidebar {
+    padding: 20px;
+    padding: 2rem;
+
+    @media (--menu-query) {
+        padding: 0;
+    }
+
+    .widget-title {
+        border-bottom: var(--border);
+        margin-top: 0;
+        padding-bottom: 20px;
+        padding-bottom: 2rem;
+    }
+}

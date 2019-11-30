@@ -1,0 +1,27 @@
+.off-canvas-container {
+    background: var(--off-canvas-color);
+    border-left: var(--off-canvas-border);
+	height: 100%;
+    overflow-y: scroll;
+    padding: 10px;
+	padding: 1rem;
+	position: fixed;
+	right: -320px;
+	top: 0;
+	transition: right var(--ease-in-out);
+	width: 320px;
+	z-index: 1000;
+
+	&.active {
+		right: 0;
+    }
+
+    .site-logo-link {
+        display: block;
+        flex: 0 1 100%;
+
+        @media (--menu-button-query) {
+            display: none;
+        }
+    }
+}

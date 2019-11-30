@@ -1,0 +1,155 @@
+.post-navigation {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 60px 20px;
+    margin: 6rem 2rem;
+    position: relative;
+
+    @media (--menu-query) {
+        margin: 60px 0;
+        margin: 6rem 0;
+    }
+
+    .post-navigation-link {
+        align-items: center;
+        background: var(--post-navigation-color);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow-style) var(--box-shadow-color), var(--box-shadow-style-alt) var(--box-shadow-color-alt);
+        color: var(--post-navigation-text-color);
+        display: flex;
+        flex: 0 1 100%;
+        flex-flow: row wrap;
+        position: relative;
+        text-decoration: none;
+        transition: background-color var(--linear), color var(--linear);
+
+        @media (--menu-query) {
+            flex: 0 1 50%;
+        }
+
+        .post-nav-image-container {
+            flex: 0 1 150px;
+            position: relative;
+
+            .scrim {
+                align-items: center;
+                background: rgba(0, 0, 0, 0.35);
+                color: var(--white);
+                display: flex;
+                font-size: 36px;
+                font-size: 3.6rem;
+                height: 100%;
+                justify-content: center;
+                left: 0;
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                transition: opacity var(--linear);
+                width: 100%;
+            }
+
+            .post-nav-image {
+                display: block;
+                height: auto;
+                margin: 0;
+            }
+        }
+
+        .post-nav-text {
+            display: block;
+            flex: 0 1 calc(100% - 150px);
+            padding: 20px;
+            padding: 2rem;
+
+            @media (--menu-query) {
+                max-width: 350px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .post-nav-label {
+                display: block;
+                font-size: 14px;
+                font-size: 1.4rem;
+            }
+
+            .post-nav-title {
+                font-size: 20px;
+                font-size: 2rem;
+                font-weight: 700;
+            }
+        }
+
+        &.prev-post-link {
+            justify-content: flex-start;
+            left: 0;
+            margin-bottom: 20px;
+            margin-bottom: 2rem;
+            transition: left var(--linear);
+
+            @media (--menu-query) {
+                border-top-left-radius: var(--border-radius);
+                border-bottom-left-radius: var(--border-radius);
+                margin-bottom: 0;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    left: -30px;
+                }
+
+                .post-nav-image-container {
+                    border-top-left-radius: var(--border-radius);
+                    border-bottom-left-radius: var(--border-radius);
+                    
+                    .scrim,
+                    .post-nav-image {
+                        border-top-left-radius: var(--border-radius);
+                        border-bottom-left-radius: var(--border-radius);
+                    }
+                }
+            }
+        }
+
+        &.next-post-link {
+            justify-content: flex-end;
+            right: 0;
+            text-align: right;
+            transition: right var(--linear);
+
+            @media (--menu-query) {
+                border-top-right-radius: var(--border-radius);
+                border-bottom-right-radius: var(--border-radius);
+    
+                &:hover,
+                &:focus,
+                &:active {
+                    right: -30px;
+                }
+    
+                .post-nav-image-container {
+                    border-top-right-radius: var(--border-radius);
+                    border-bottom-right-radius: var(--border-radius);
+                    
+                    .scrim,
+                    .post-nav-image {
+                        border-top-right-radius: var(--border-radius);
+                        border-bottom-right-radius: var(--border-radius);
+                    }
+                }
+            }
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            background: var(--post-navigation-color-hover);
+            color: var(--post-navigation-text-color-hover);
+
+            .scrim {
+                opacity: 1;
+            }
+        }
+    }
+}

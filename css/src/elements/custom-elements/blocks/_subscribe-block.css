@@ -1,0 +1,93 @@
+.subscribe-block {
+    background: transparent;
+    color: var(--text-color-light);
+    padding: 100px 20px;
+    padding: 10rem 2rem;
+
+    .wrapper {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+
+        .subscribe-block-title {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .gform_wrapper {
+            flex: 0 1 100%;
+            margin: 0;
+
+            form {
+                align-items: center;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+
+                .gform_body,
+                .gform_footer {
+                    flex: 0 1 auto;
+                    margin: 0;
+                    padding: 0;
+                    width: auto;
+                }
+
+                .gform_body {
+                    min-width: 280px;
+
+                    .gfield {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    .gfield_label {
+                        border: 0;
+                        clip: rect(1px, 1px, 1px, 1px);
+                        clip-path: inset(50%);
+                        height: 1px;
+                        margin: -1px;
+                        overflow: hidden;
+                        padding: 0;
+                        position: absolute !important;
+                        width: 1px;
+                        word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+                    }
+
+                    .ginput_container {
+                        margin: 0;
+
+                        input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+                            border: none;
+                            border-radius: var(--border-radius);
+                            color: var(--text-color-dark);
+                            padding: 10px 10px;
+                            padding: 1rem 1rem;
+
+                            @media (--newsletter-button-query) {
+                                border-top-right-radius: 0;
+                                border-bottom-right-radius: 0;
+                            }
+                        }
+                    }
+                }
+
+                .gform_footer {
+                    input[type=submit] {
+                        font-size: 18px;
+                        font-size: 1.8rem;
+                        margin-bottom: 0;
+                        margin-top: 10px;
+                        margin-top: 1rem;
+
+                        @media (--newsletter-button-query) {
+                            border-top-left-radius: 0;
+                            border-bottom-left-radius: 0;
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

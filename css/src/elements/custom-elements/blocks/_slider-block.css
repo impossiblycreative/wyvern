@@ -1,0 +1,116 @@
+.slider {
+    padding: 0;
+
+    @media (--content-query) {
+        padding: 40px 0 0;
+        padding: 4rem 0 0;
+    }
+
+    .archive & {
+        padding-top: 0;
+    }
+
+    .slides {
+        border-radius: 10px;
+        display: flex;
+        min-width: 0px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 20px;
+        padding-bottom: 2rem;
+        scroll-behavior: smooth;
+
+        > * {
+            align-items: center;
+            background: var(--slide-background-color);
+            border: var(--border);
+            border-radius: var(--border-radius);
+            border-width: 3px;
+            color: var(--slide-text-color);
+            display: flex;
+            flex: 0 0 100%;
+            flex-flow: row wrap;
+            margin: 0;
+            padding: 10px;
+            padding: 1rem;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            @media (--content-query) {
+                padding: 20px;
+                padding: 2rem;
+            }
+
+            .slide-image-container,
+            .slide-content {
+                flex: 0 1 100%;
+                width: 100%;
+
+                @media (--content-query) {
+                    flex: 0 1 50%;
+                    width: 50%;
+                }
+            }
+    
+            .slide-image-container {
+                border-radius: var(--border-radius);
+
+                img {
+                    border-radius: var(--border-radius);
+                    display: block;
+                    height: auto;
+                    margin: 0 auto;
+                    max-width: 100%;
+                    width: 100%;
+                }
+            }
+    
+            .slide-content {
+                padding: 10px 0;
+                padding: 1rem 0;
+
+                @media (--content-query) {
+                    padding: 20px 40px;
+                    padding: 2rem 4rem;
+                }
+            }
+        }
+    }
+}
+
+.slider-navigation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 20px 0 40px;
+    margin: 2rem 0 4rem;
+    padding: 0;
+
+    .navigation-button {
+        list-style-type: none;
+        margin: 0 10px;
+        margin: 0 1rem;
+
+        a {
+            background: var(--slider-navigation-button-color);
+            border-radius: 3px;
+            display: block;
+            height: 10px;
+            font-size: 10px;
+            padding: 0 25px;
+            transition: background-color var(--linear);
+
+            &.current {
+                background: var(--slider-navigation-button-color-hover);
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                background: var(--slider-navigation-button-color-hover);
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+/* Example
+@font-face {
+    font-family: 'AndroclesOpti';
+    src: url("../../fonts/AndroclesOpti-Heavy.otf") format("otf"),
+         url("../../fonts/AndroclesOpti-Heavy.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+*/

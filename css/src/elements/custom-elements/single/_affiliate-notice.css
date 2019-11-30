@@ -1,0 +1,18 @@
+.affiliate-notice {
+    background: var(--affiliate-notice-color);
+    border-radius: var(--border-radius);
+    color: var(--affiliate-notice-text-color);
+    padding: 10px;
+    padding: 1rem;
+    text-align: center;
+
+    .disclaimer-link {
+        color: var(--affiliate-notice-link-color);
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: var(--affiliate-notice-link-color-hover);
+        }
+    }
+}

@@ -1,0 +1,80 @@
+.site-header {
+    .search-container {
+        align-items: center;
+        display: none;
+        height: 40px;
+        margin-right: 20px;
+        margin-right: 2rem;
+        overflow: hidden;
+        position: relative;
+        transition: width var(--linear);
+        width: 40px;
+
+        @media (--menu-button-query) {
+            display: flex;
+        }
+
+        .search-toggle {
+            padding: 0;
+
+            span {
+                display: block;
+                padding: 10px 12px;
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        .search-form {
+            align-items: center;
+            display: flex;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0;
+
+            label {
+                display: block;
+            }
+
+            input[type=search] {
+                appearance: none;
+                border: var(--border);
+                border-bottom-left-radius: var(--border-radius);
+                border-top-left-radius: var(--border-radius);
+                font-size: 14px;
+                font-size: 1.4rem;
+                padding: 10px 10px;
+                padding: 1rem 1rem;
+            }
+
+            input[type=submit] {
+                background: var(--search-submit-color);
+                border: var(--border);
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 0;
+                color: var(--search-submit-text-color);
+                transition: border-color var(--linear);
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background: var(--search-submit-color-hover);
+                    border-color: var(--button-border-color-hover);
+                    color: var(--search-submit-text-color-hover);
+                }
+            }
+        }
+
+        &.open {
+            width: 310px;
+
+            .search-form {
+                opacity: 1;
+                pointer-events: all;
+                width: 270px;
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.post-meta {
+    > span {
+        display: inline-block;
+        margin: 0 10px 10px 0;
+        margin: 0 1rem 1rem 0;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}

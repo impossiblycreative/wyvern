@@ -1,0 +1,54 @@
+/*--------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+:root {
+	/* Steps on the modular scale */
+	--ratio: 1.4;
+	--s-5: calc(var(--s-4) / var(--ratio));
+	--s-4: calc(var(--s-3) / var(--ratio));
+	--s-3: calc(var(--s-2) / var(--ratio));
+	--s-2: calc(var(--s-1) / var(--ratio));
+	--s-1: calc(var(--s0) / var(--ratio));
+
+	/* Sizes */
+	--s0: 16px;
+	--s0: 1.6rem;
+	--s1: calc(var(--s0) * var(--ratio));
+	--s2: calc(var(--s1) * var(--ratio));
+	--s3: calc(var(--s2) * var(--ratio));
+	--s4: calc(var(--s3) * var(--ratio));
+	--s5: calc(var(--s4) * var(--ratio));
+
+	/* Colors */
+	--light-grey: #F7F7F7;
+	--grey: #C0C0C0;
+	--black: #000;
+	--white: #FFF;
+
+	/* Social Media Colors */
+	--facebook: #1877F2;
+	--instagram: #C32AA3;
+	--like: #02B875;
+	--pinterest: #BD081C;
+	--twitch: #9146FF;
+	--twitter: #1DA1F2;
+	--youtube: #FF0000;
+
+	/* Fonts */
+	--font-plain: 'Open Sans', sans-serif;
+	--font-awesome: "Font Awesome 5 Pro";
+	--line-height: var(--ratio);
+	--line-height-small: calc(0.75 * var(--ratio));
+	
+	/* Transitions */
+	--linear: 0.3s linear;
+	--cubic: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	--ease-in-out: 0.3s ease-in-out;
+
+	/* Others */
+	--measure: 65ch;
+
+	/* Globals */
+	color: var(--black);
+	font-family: var(--font-plain);
+}

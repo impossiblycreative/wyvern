@@ -1,0 +1,119 @@
+/*--------------------------------------------------------------
+# Theming - Variables specific to the theme, using colors 
+# defined in the main Variables file as well as here
+--------------------------------------------------------------*/
+:root {
+	/* Theme Colors Go Here */
+
+	/* Custom Fonts */
+	--font-plain: sans-serif;
+	--font-special: serif;
+
+	/* Defaults */
+	--background-color-dark: var(--black);
+	--background-color-medium: var(--grey);
+	--background-color-light: var(--white);
+	--border: 1px solid var(--black);
+	--border-radius: 0;
+	--border-radius-small: 0;
+	--border-radius-tiny: 0;
+	--border: 1px solid var(--black);
+	--border-heavy: 4px solid var(--black);
+	--border-alt: 1px solid var(--grey);
+	--border-heavy-alt: 4px solid var(--grey);
+	--border-light: 1px solid var(--light-grey);
+	--border-dashed: 2px dashed var(--black);
+	--border-dashed-alt: 2px dashed var(--white);
+	--border-dashed-light: 2px dashed var(--light-grey);
+	--box-shadow-style: 0px 1px 2px;
+	--box-shadow-color: rgba(0, 0, 0, 0.25);
+	--box-shadow-style-alt: 0px 2px 4px;
+	--box-shadow-color-alt: rgba(0, 0, 0, 0.25);
+	--caption-color: var(--black);
+	--caption-text-color: var(--white);
+	--selection-color: var(--black);
+	--selection-text-color: var(--white);
+	--text-color-dark: var(--black);
+	--text-color-medium: var(--grey);
+	--text-color-light: var(--white);
+	--text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+
+	/* Links */
+	--link-color: var(--grey);
+	--link-color-hover: var(--black);
+
+    /* Button Colors */
+	--button-color: var(--black);
+	--button-text-color: var(--white);
+	--button-color-alt: var(--grey);
+	--button-text-color-alt: var(--black);
+	--button-color-disabled: var(--grey);
+	--button-text-color-disabled: var(--black);
+	--search-submit-color: var(--grey);
+	--search-submit-text-color: var(--black);
+
+    /* Button Hovers */
+	--button-border-color-hover: var(--grey);
+	--button-color-hover: var(--grey);
+	--button-text-color-hover: var(--black);
+	--button-color-alt-hover: var(--black);
+	--button-text-color-alt-hover: var(--white);
+	--search-submit-color-hover: var(--grey);
+	--search-submit-text-color-hover: var(--white);
+
+	/* Menu Colors */
+	--nav-item-color: var(--white);
+	--nav-item-color-hover: var(--grey);
+	--off-canvas-color: var(--black);
+	--off-canvas-border: 5px solid var(--grey);
+	--off-canvas-nav-item-color: var(--white);
+	--off-canvas-nav-item-color-hover: var(--grey);
+
+	/* Header Colors */
+	--site-header-background-color: var(--black);
+	--site-header-text-color: var(--white);
+
+	/* Footer Colors */
+	--site-footer-background-color: var(--black);
+	--site-footer-text-color: var(--white);
+	--copyright-color: var(--black);
+	--copyright-text-color: var(--white);
+
+	/* Cookie Bar */
+	--cookie-bar-color: var(--grey);
+
+	/* Page Header */
+	--page-header-color: var(--black);
+	--page-header-text-color: var(--white);
+
+	/* Slides */
+	--slide-background-color: var(--white);
+	--slide-text-color: var(--black);
+	--slider-navigation-button-color: var(--black);
+	--slider-navigation-button-color-hover: var(--white);
+
+	/* Post Card Block & Cards */
+	--post-card-block-background-color: var(--black);
+	--post-card-background-color: var(--white);
+
+	/* Pagination */
+	--pagination-color: var(--grey);
+	--pagination-color-hover: var(--black);
+	--pagination-text-color: var(--white);
+	--pagination-text-color-hover: var(--white);
+
+	/* Affiliate Notice */
+	--affiliate-notice-color: var(--black);
+	--affiliate-notice-text-color: var(--white);
+	--affiliate-notice-link-color: var(--grey);
+	--affiliate-notice-link-color-hover: var(--grey);
+
+	/* Post Navigation */
+	--post-navigation-color: var(--black);
+	--post-navigation-text-color: var(--white);
+	--post-navigation-color-hover: var(--grey);
+	--post-navigation-text-color-hover: var(--white);
+
+	/* Progress Bar */
+	--progress-bar-color: linear-gradient(90deg, rgba(247,247,247,0) 0%, rgba(0,153,204,1) 100%);
+}

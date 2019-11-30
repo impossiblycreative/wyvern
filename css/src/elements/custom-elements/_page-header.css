@@ -1,0 +1,45 @@
+.page-header {
+    background: var(--page-header-color);
+    color: var(--page-header-text-color);
+    padding: 20px;
+    padding: 2rem;
+    text-align: center;
+    text-shadow: var(--text-shadow);
+
+    @media (--content-query) {
+        padding: 60px 20px;
+        padding: 6rem 2rem;
+    }
+
+    .avatar {
+        border-radius: var(--border-radius);
+        margin: 0 auto;
+    }
+
+    .page-header-title {
+        margin: 10px 0 5px;
+        margin: 1rem 0 0.5rem;
+    }
+
+    .page-header-meta {
+        font-size: 16px;
+        font-size: 1.6rem;
+        margin: 0;
+    }
+
+    .page-header-description {
+        font-size: 14px;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        margin: 20px auto 0;
+        margin: 2rem auto 0;
+
+        @media (--menu-query) {
+            max-width: 70%;
+        }
+
+        *:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

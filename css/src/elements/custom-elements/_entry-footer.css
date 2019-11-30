@@ -1,0 +1,12 @@
+.entry-footer {
+    background: var(--white);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 30px 20px;
+    padding: 3rem 2rem;
+
+    @media (--menu-query) {
+        padding: 30px 20px;
+        padding: 3rem 2rem;
+    }
+}
