@@ -6,14 +6,23 @@ class Wyvern_Walker_Nav_Menu extends Walker_Nav_Menu {
         $permalink = $item->url;
         $classes = $item->classes;
 
+        // Set the depth class
+        $depth_class = 'menu-level-' . $depth;
+        $classes[] = $depth_class;
+
         // Check if there is a submenu
         $dropdown = in_array( 'menu-item-has-children', $classes );
         
-        // Open the list item
-        $output .= "<li class='" .  implode( " ", $classes ) . "'>";
+        // Open the list item, add aria-expanded if children present
+        if ( $dropdown ) {
+            $aria_text = 'aria-expanded="false"';
+            $output .= '<li class="' . implode( ' ', $classes ) . '" ' . $aria_text . '>';
+        } else {
+            $output .= '<li class="' . implode( ' ', $classes ) . '">';
+        }
 
         // Use semantic markup/remove empty links
-        if( $permalink && $permalink != '#' ) {
+        if ( $permalink && $permalink != '#' ) {
             $output .= '<a href="' . $permalink . '">';
         } else {
             $output .= '<span class="menu-item-text">';
@@ -23,7 +32,7 @@ class Wyvern_Walker_Nav_Menu extends Walker_Nav_Menu {
         $output .= $title;
 
         // Close our link/span
-        if( $permalink && $permalink != '#' ) {
+        if ( $permalink && $permalink != '#' ) {
             $output .= '</a>';
         } else {
             $output .= '</span>';

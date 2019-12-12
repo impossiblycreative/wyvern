@@ -153,7 +153,7 @@
                         }
 
                         &.menu-item-has-children {
-                            a,
+                            > a,
                             > span {
                                 flex: 0 1 calc(100% - 20px);
                             }
@@ -163,6 +163,11 @@
 
                 &.open > .sub-menu {
                     display: block;
+                }
+
+                &.open:not(.menu-level-0) > .sub-menu {
+                    right: -270px;
+                    top: 0;
                 }
             }
         }

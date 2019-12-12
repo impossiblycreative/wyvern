@@ -9,6 +9,7 @@ const subMenus = document.querySelectorAll( 'li.menu-item-has-children' );
 let focasable;
 let delayTimer;
 let focusTimer;
+let currentSubMenu;
 
 // Toggle the search form
 if ( searchToggle ) {
@@ -26,11 +27,11 @@ if ( mobileMenuToggle ) {
     offCanvasClose.addEventListener( 'click', mobileMenuClose );
 }
 
-// Add a delay to sub-menu mouseout events to improve accessibility
+// Deal with the sub-menus
 if ( subMenus ) {
     Array.prototype.forEach.call( subMenus, function( element, iterator ){
-        element.addEventListener( 'mouseover', menuMouseOver );
-        element.addEventListener( 'mouseout', menuMouseOut );
+        element.addEventListener( 'mouseenter', openSubMenu );
+        element.addEventListener( 'mouseleave', closeSubMenu );
 
         // Get all of the buttons for this sub-menu
         let buttons = element.querySelectorAll( 'button' );
@@ -49,6 +50,7 @@ if ( subMenus ) {
         } );
     } );
 }
+
 
 function searchToggleClick( event ) {
     const searchContainer = document.getElementById( 'header-search' );
@@ -91,30 +93,48 @@ function mobileMenuClose( event ) {
     offCanvas.classList.toggle( 'active' );
 }
 
-// Handle the mouseover event for menus
-function menuMouseOver( event ) {
-    // Close all of the open sub-menus
-    const allOpenSubMenus = document.querySelectorAll( '.open > .sub-menu' );
-
-    if ( allOpenSubMenus ) {
-        Array.prototype.forEach.call( allOpenSubMenus, function( element ) {
-            element.parentNode.classList.remove( 'open' );
-        } );
+// Open the sub-menu
+function openSubMenu( event ) {
+    // Close out the currently open submenu if we've moved to a new top-level sub-menu
+    if( this.classList.contains( 'menu-level-0' ) && currentSubMenu ) {
+        currentSubMenu.classList.remove( 'open' );
+        currentSubMenu.setAttribute( 'aria-expanded', 'false' );
     }
 
-    // Open the new one
-    clearTimeout( delayTimer );
-    delayTimer = null;
+    // Open the menu and set the ARIA attributes
     this.classList.add( 'open' );
+    this.setAttribute( 'aria-expanded', 'true' );
+
+    // Set the ARIA on the button as well
+    this.children[1].setAttribute( 'aria-expanded', 'true' );
+
+    // Track the current sub-menu
+    currentSubMenu = this;
+
+    // Clear the timer so the menu doesn't arbitrarily close
+    clearTimeout( delayTimer );
 }
 
-// Handle the mouseout event for menus
-function menuMouseOut( event ) {
-    const target = this;
-    
-    // Set the timer for 1 second
-    delayTimer = setTimeout( function() {
-        target.classList.remove( 'open' );
+// Close the sub-menu after
+function closeSubMenu( event ) {
+
+    // Mark the sub-menu as currenet
+    currentSubMenu = this;
+
+    // Set our timer to account for motor disabilities
+    delayTimer = setTimeout( function( event ){
+
+        // Close the menu and sete the ARIA attributes
+        if ( currentSubMenu ) {
+            currentSubMenu.classList.remove( 'open' );
+            currentSubMenu.setAttribute( 'aria-expanded', 'false' );
+
+            // Set the ARIA on the button as well
+            currentSubMenu.children[1].setAttribute( 'aria-expanded', 'false' );
+
+            // Clear the current submenu
+            currentSubMenu = false;
+        }
     }, 1000 );
 }
 
