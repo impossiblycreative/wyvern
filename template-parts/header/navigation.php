@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the header navigation
  *
- * @package gbn
+ * @package Wyvern
  */
 ?>
 

@@ -31,7 +31,7 @@ class Wyvern_Walker_Nav_Menu extends Walker_Nav_Menu {
 
         // Add the caret if we have a dropdown
         if ( $dropdown ) {
-            $output .= '<button class="sub-menu-activator" aria-haspopup="true" aria-expanded="false"><span class="screen-reader-text">' . esc_html__( 'Show sub-menu for ', 'gbn' ) . $title . '</span><span class="fas fa-caret-down"></span></button>';
+            $output .= '<button class="sub-menu-activator" aria-haspopup="true" aria-expanded="false"><span class="screen-reader-text">' . esc_html__( 'Show sub-menu for ', 'wyvern' ) . $title . '</span><span class="fas fa-caret-down"></span></button>';
         }
     }
 }

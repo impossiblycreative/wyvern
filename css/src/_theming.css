@@ -14,7 +14,7 @@
 	--background-color-medium: var(--grey);
 	--background-color-light: var(--white);
 	--border: 1px solid var(--black);
-	--border-radius: 0;
+	--border-radius: 10px;
 	--border-radius-small: 0;
 	--border-radius-tiny: 0;
 	--border: 1px solid var(--black);
@@ -68,6 +68,10 @@
 	--off-canvas-border: 5px solid var(--grey);
 	--off-canvas-nav-item-color: var(--white);
 	--off-canvas-nav-item-color-hover: var(--grey);
+	--sub-menu-color: var(--grey);
+	--sub-menu-text-color: var(--black);
+	--sub-menu-item-color-hover: var(--black);
+	--sub-menu-item-text-color-hover: var(--white);
 
 	/* Header Colors */
 	--site-header-background-color: var(--black);

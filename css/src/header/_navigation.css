@@ -45,10 +45,15 @@
             }
     
             .menu-item {
+                align-items: center;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: flex-start;
                 list-style-type: none;
                 margin: 0 5px;
                 margin: 0 0.5rem;
                 padding: 0;
+                position: relative;
     
                 a,
                 > span {
@@ -57,8 +62,6 @@
                     font-family: var(--font-special);
                     font-size: 16px;
                     font-size: 1.6rem;
-                    margin-top: 5px;
-                    margin-top: 0.5rem; /* Adjustment for font to maintain vertical centering */
                     position: relative;
                     text-decoration: none;
                     text-transform: uppercase;
@@ -97,6 +100,69 @@
                             transform: scale3d(1, 1, 1);
                         }
                     }
+                }
+
+                &.menu-item-has-children {
+                    a, 
+                    > span {
+                        padding-right: 5px;
+                        padding-right: 0.5rem;
+                    }
+                }
+
+                .sub-menu-activator {
+                    padding: 3px 5px;
+                    padding: 0.3rem 0.5rem;
+                
+                    span:not(.screen-reader-text) {
+                        display: block;
+                    }
+                }
+                
+                .sub-menu {
+                    background: var(--sub-menu-color);
+                    display: none;
+                    padding: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 100%;
+                    width: 270px;
+                    z-index: 100;
+                
+                    .menu-item {
+                        margin: 0;
+                        text-align: left;
+                    
+                        a,
+                        > span {
+                            color: var(--sub-menu-text-color);
+                            flex: 0 1 100%;
+                            padding: 0 5px;
+                            padding: 0 0.5rem;
+                
+                            &:hover,
+                            &:focus,
+                            &:active {
+                                background: var(--sub-menu-item-color-hover);
+                                color: var(--sub-menu-item-text-color-hover);
+                            }
+                
+                            &:after {
+                                display: none;
+                            }
+                        }
+
+                        &.menu-item-has-children {
+                            a,
+                            > span {
+                                flex: 0 1 calc(100% - 20px);
+                            }
+                        }
+                    }
+                }
+
+                &.open > .sub-menu {
+                    display: block;
                 }
             }
         }

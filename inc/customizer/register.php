@@ -80,8 +80,8 @@ function wyvern_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         'cookie_notice_text', 
         array(
-            'label' => __( 'Cookie Notice - Text' ),
-            'description' => __( 'Text for your cookie notification.' ),
+            'label' => __( 'Cookie Notice - Text', 'wyvern' ),
+            'description' => __( 'Text for your cookie notification.', 'wyvern' ),
             'type' => 'text',
             'section' => 'wyvern_theme_settings_general',
         ) 
@@ -101,8 +101,8 @@ function wyvern_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         'cookie_notice_page',  
         array(
-            'label' => __( 'Cookie Notification -  Page' ),
-            'description' => __( 'What page should we link to?' ),
+            'label' => __( 'Cookie Notification -  Page', 'wyvern' ),
+            'description' => __( 'What page should we link to?', 'wyvern' ),
 			'type'     => 'dropdown-pages',
             'section' => 'wyvern_theme_settings_general',
         ) 
@@ -122,8 +122,8 @@ function wyvern_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         'cookie_notice_button_text', 
         array(
-            'label' => __( 'Cookie Notice - Button Text' ),
-            'description' => __( 'Text for your cookie notification button.' ),
+            'label' => __( 'Cookie Notice - Button Text', 'wyvern' ),
+            'description' => __( 'Text for your cookie notification button.', 'wyvern' ),
             'type' => 'text',
             'section' => 'wyvern_theme_settings_general',
         ) 
@@ -143,8 +143,8 @@ function wyvern_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         'facebook_link', 
         array(
-            'label' => __( 'Facebook Link' ),
-            'description' => __( 'Link your Facebook page here. Used throughout the site.' ),
+            'label' => __( 'Facebook Link', 'wyvern' ),
+            'description' => __( 'Link your Facebook page here. Used throughout the site.', 'wyvern' ),
             'type' => 'text',
             'section' => 'wyvern_theme_settings_general',
         ) 
@@ -164,8 +164,8 @@ function wyvern_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         'twitter_link', 
         array(
-            'label' => __( 'Twitter Link' ),
-            'description' => __( 'Link your Twitter page here. Used throughout the site.' ),
+            'label' => __( 'Twitter Link', 'wyvern' ),
+            'description' => __( 'Link your Twitter page here. Used throughout the site.', 'wyvern' ),
             'type' => 'text',
             'section' => 'wyvern_theme_settings_general',
         ) 
@@ -185,8 +185,8 @@ function wyvern_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         'instagram_link', 
         array(
-            'label' => __( 'Instagram Link' ),
-            'description' => __( 'Link your Instagram page here. Used throughout the site.' ),
+            'label' => __( 'Instagram Link', 'wyvern' ),
+            'description' => __( 'Link your Instagram page here. Used throughout the site.', 'wyvern' ),
             'type' => 'text',
             'section' => 'wyvern_theme_settings_general',
         ) 
@@ -206,8 +206,8 @@ function wyvern_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         'youtube_link', 
         array(
-            'label' => __( 'YouTube Link' ),
-            'description' => __( 'Link your YouTube page here. Used throughout the site.' ),
+            'label' => __( 'YouTube Link', 'wyvern' ),
+            'description' => __( 'Link your YouTube page here. Used throughout the site.', 'wyvern' ),
             'type' => 'text',
             'section' => 'wyvern_theme_settings_general',
         ) 
@@ -227,8 +227,8 @@ function wyvern_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         'twitch_link', 
         array(
-            'label' => __( 'Twitch Link' ),
-            'description' => __( 'Link your Twitch page here. Used throughout the site.' ),
+            'label' => __( 'Twitch Link', 'wyvern' ),
+            'description' => __( 'Link your Twitch page here. Used throughout the site.', 'wyvern' ),
             'type' => 'text',
             'section' => 'wyvern_theme_settings_general',
         ) 
@@ -248,8 +248,8 @@ function wyvern_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         'newsletter_signup_form_name', 
         array(
-            'label' => __( 'Newsletter Signup Form Name' ),
-            'description' => __( 'What is the name of your newletter signup form?' ),
+            'label' => __( 'Newsletter Signup Form Name', 'wyvern' ),
+            'description' => __( 'What is the name of your newletter signup form?', 'wyvern' ),
             'type' => 'text',
             'section' => 'wyvern_theme_settings_newsletter',
         ) 
@@ -269,8 +269,8 @@ function wyvern_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         'newsletter_signup_form_prompt', 
         array(
-            'label' => __( 'Newsletter Signup Form Prompt' ),
-            'description' => __( 'What text should go above your newsletter signup form?' ),
+            'label' => __( 'Newsletter Signup Form Prompt', 'wyvern' ),
+            'description' => __( 'What text should go above your newsletter signup form?', 'wyvern' ),
             'type' => 'text',
             'section' => 'wyvern_theme_settings_newsletter',
         ) 
@@ -312,8 +312,8 @@ function wyvern_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         'affiliate_link_notification_text', 
         array(
-            'label' => __( 'Affiliate Link Notification - Text' ),
-            'description' => __( 'What text should be shown as your affiliate link notification?' ),
+            'label' => __( 'Affiliate Link Notification - Text', 'wyvern' ),
+            'description' => __( 'What text should be shown as your affiliate link notification?', 'wyvern' ),
             'type' => 'text',
             'section' => 'wyvern_theme_settings_single_posts',
         ) 
@@ -333,8 +333,8 @@ function wyvern_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         'affiliate_link_notification_page', 
         array(
-            'label' => __( 'Affiliate Link Notification - Page' ),
-            'description' => __( 'What page should we link to?' ),
+            'label' => __( 'Affiliate Link Notification - Page', 'wyvern' ),
+            'description' => __( 'What page should we link to?', 'wyvern' ),
 			'type'     => 'dropdown-pages',
             'section' => 'wyvern_theme_settings_single_posts',
         ) 
@@ -354,8 +354,8 @@ function wyvern_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         'footer_statement', 
         array(
-            'label' => __( 'Footer Statement' ),
-            'description' => __( 'This text will display on a line before the logo' ),
+            'label' => __( 'Footer Statement', 'wyvern' ),
+            'description' => __( 'This text will display on a line before the logo', 'wyvern' ),
             'type' => 'textarea',
             'section' => 'wyvern_theme_settings_footer',
         ) 
@@ -375,8 +375,8 @@ function wyvern_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         'footer_copyright_statement', 
         array(
-            'label' => __( 'Footer Copyright Statement' ),
-            'description' => __( 'This text will display after the Copyright' ),
+            'label' => __( 'Footer Copyright Statement', 'wyvern' ),
+            'description' => __( 'This text will display after the Copyright', 'wyvern' ),
             'type' => 'text',
             'section' => 'wyvern_theme_settings_footer',
         ) 

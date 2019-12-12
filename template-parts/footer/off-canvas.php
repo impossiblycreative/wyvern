@@ -1,7 +1,7 @@
 <div id="off-canvas-container" class="off-canvas-container">
 	<?php get_template_part( 'template-parts/header/branding' ); ?>
     
-    <button id="off-canvas-close" class="alt menu-toggle" title="<?php esc_html_e( 'Close', 'gbn' ); ?>">
+    <button id="off-canvas-close" class="alt menu-toggle" title="<?php esc_html_e( 'Close', 'wyvern' ); ?>">
         <span class="fas fa-times"></span>
         <span class="menu-toggle-text"><?php esc_html_e( 'Close', 'wyvern' ); ?></span>
     </button>
