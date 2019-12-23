@@ -22,8 +22,6 @@
             <button id="search-toggle" class="alt search-toggle" aria-expanded="false" aria-haspopup="true" title="<?php esc_html_e( 'Search', 'wyvern' ); ?>"><span class="fas fa-search"></span></button>
             <?php get_search_form(); ?>
         </div>
-
-        <a class="button subscribe-button" href="/#subscribe-block"><?php esc_html_e( 'Subscribe', 'wyvern' ); ?></a>
     </nav>
     
     <button id="mobile-menu-toggle" class="menu-toggle" aria-expanded="false" aria-haspopup="true" title="<?php esc_html_e( 'Menu', 'wyvern' ); ?>">

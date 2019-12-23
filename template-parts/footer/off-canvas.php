@@ -1,5 +1,5 @@
 <div id="off-canvas-container" class="off-canvas-container">
-	<?php get_template_part( 'template-parts/header/branding' ); ?>
+	<?php get_template_part( 'template-parts/footer/off-canvas-branding' ); ?>
     
     <button id="off-canvas-close" class="alt menu-toggle" title="<?php esc_html_e( 'Close', 'wyvern' ); ?>">
         <span class="fas fa-times"></span>
@@ -20,6 +20,5 @@
             ) );
         }
     ?>
-    <a class="button alt subscribe-button" href="/#subscribe-block"><?php esc_html_e( 'Subscribe', 'wyvern' ); ?></a>
     </nav>
 </div>

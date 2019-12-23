@@ -3,8 +3,8 @@
     border-left: var(--off-canvas-border);
 	height: 100%;
     overflow-y: scroll;
-    padding: 10px;
-	padding: 1rem;
+    padding: 20px 10px;
+	padding: 2rem 1rem;
 	position: fixed;
 	right: -320px;
 	top: 0;

@@ -12,6 +12,8 @@
     }
 
     .menu-toggle {
+        background: var(--menu-toggle-color);
+        color: var(--menu-toggle-text-color);
         display: block;
         flex: 0 1 100%;
 
@@ -30,6 +32,7 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: flex-end;
+        position: relative;
 
         .menu {
             align-items: center;
@@ -132,6 +135,15 @@
                     .menu-item {
                         margin: 0;
                         text-align: left;
+
+                        &:hover {
+                            background: var(--sub-menu-item-color-hover);
+
+                            > a,
+                            > span {
+                                color: var(--sub-menu-item-text-color-hover);
+                            }
+                        }
                     
                         a,
                         > span {
@@ -169,14 +181,6 @@
                     right: -270px;
                     top: 0;
                 }
-            }
-        }
-
-        .subscribe-button {
-            display: none;
-
-            @media (--menu-query) {
-                display: block;
             }
         }
     }

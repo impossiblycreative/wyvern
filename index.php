@@ -16,17 +16,11 @@ get_header();
 ?>
 
 <main id="site-main" class="main" role="main">
-	<div class="wrapper">
-	<?php
-		if( have_posts() ) {
-			while( have_posts() ) {
-				the_post();
-
-				the_content();
-			}
-		}
-	?>
-	</div>
+	<section id="posts-block" class="home-block posts-block">
+		<div class="wrapper">
+			<?php get_template_part( 'template-parts/blocks/posts/container' ); ?>
+		</div>
+	</section><!-- #posts-block -->
 </main><!-- #site-main -->
 
 <?php

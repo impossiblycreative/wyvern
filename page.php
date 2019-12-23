@@ -17,6 +17,7 @@ get_header();
 // Get the background image
 $page_header_background = get_the_post_thumbnail_url( get_the_ID(), 'page-header-background' );
 $page_header_classes = 'page-header entry-header';
+$page_header_style = '';
 
 // Make sure we have a background image before setting up the style string
 if ( $page_header_background ) {

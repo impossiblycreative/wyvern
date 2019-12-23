@@ -64,10 +64,14 @@
 	/* Menu Colors */
 	--nav-item-color: var(--white);
 	--nav-item-color-hover: var(--grey);
+	--menu-toggle-color: var(--grey);
+	--menu-toggle-text-color: var(--black);
 	--off-canvas-color: var(--black);
 	--off-canvas-border: 5px solid var(--grey);
 	--off-canvas-nav-item-color: var(--white);
 	--off-canvas-nav-item-color-hover: var(--grey);
+	--off-canvas-sub-menu-button-color: var(--grey);
+	--off-canvas-sub-menu-button-text-color: var(--black);
 	--sub-menu-color: var(--grey);
 	--sub-menu-text-color: var(--black);
 	--sub-menu-item-color-hover: var(--black);
