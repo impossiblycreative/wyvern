@@ -1,7 +1,8 @@
 .wp-block-image {
     text-align: center;
 
-    figcaption {
+    figcaption,
+    .wp-caption-text {
         background: var(--caption-color);
         border-radius: var(--border-radius);
         color: var(--caption-text-color);
@@ -12,6 +13,16 @@
         margin: 1rem 0 0;
         padding: 10px;
         padding: 1rem;
+    }
+}
+
+.blocks-gallery-grid {
+    .blocks-gallery-item {
+        figcaption,
+        .gallery-caption {
+            /* Using the default Gutenberg style until we have a better idea */
+            linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,.3) 70%,transparent);
+        }
     }
 }
 

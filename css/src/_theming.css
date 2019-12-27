@@ -106,6 +106,8 @@
 	/* Post Card Block & Cards */
 	--post-card-block-background-color: var(--black);
 	--post-card-background-color: var(--white);
+	--post-card-background-color-sticky: var(--grey);
+	--post-card-border-color-sticky: var(--white);
 
 	/* Pagination */
 	--pagination-color: var(--grey);

@@ -1,0 +1,48 @@
+.aligncenter {
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alignleft {
+    clear: left;
+    float: left;
+    margin-right: 20px;
+    margin-right: 2rem;
+}
+
+.alignnone {
+    clear: both;
+    margin: 0;
+}
+
+.alignright {
+    clear: right;
+    float: right;
+    margin-left: 20px;
+    margin-left: 2rem;
+}
+
+.sticky {
+    display: block;
+}
+
+.wp-caption {
+    margin: 20px 0;
+    margin: 2rem 0;
+
+    &.aligncenter {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &.alignleft {
+        margin-right: 20px;
+        margin-right: 2rem;
+    }
+
+    &.alignright {
+        margin-left: 20px;
+        margin-left: 2rem;
+    }
+}

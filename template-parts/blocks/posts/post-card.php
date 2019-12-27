@@ -1,6 +1,6 @@
 <?php $post_id = get_the_ID(); ?>
 
-<div class="post-card">
+<div <?php post_class( 'post-card' ); ?>>
     <a class="post-card-image-container" href="<?php echo esc_url( get_the_permalink( $post_id ) ); ?>">
     <?php 
     if ( has_post_thumbnail( $post_id ) ) {

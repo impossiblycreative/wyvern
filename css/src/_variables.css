@@ -46,7 +46,7 @@
 	--ease-in-out: 0.3s ease-in-out;
 
 	/* Others */
-	--measure: 65ch;
+	--measure: 75ch;
 
 	/* Globals */
 	color: var(--black);

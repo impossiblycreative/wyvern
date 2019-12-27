@@ -73,6 +73,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
         )
     );
 
@@ -94,6 +95,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'wyvern_sanitize_select',
         )
     );
 
@@ -115,6 +117,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
         )
     );
 
@@ -136,6 +139,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'esc_url',
         )
     );
 
@@ -157,6 +161,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'esc_url',
         )
     );
 
@@ -178,6 +183,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'esc_url',
         )
     );
 
@@ -199,6 +205,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'esc_url',
         )
     );
 
@@ -220,6 +227,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'esc_url',
         )
     );
 
@@ -241,6 +249,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
         )
     );
 
@@ -262,6 +271,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
         )
     );
 
@@ -283,6 +293,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'wyvern_sanitize_file',
         )
     );
 
@@ -305,6 +316,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
         )
     );
 
@@ -326,6 +338,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'wyvern_sanitize_select',
         )
     );
 
@@ -347,6 +360,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
         )
     );
 
@@ -368,6 +382,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
         )
     );
 
@@ -383,3 +398,37 @@ function wyvern_customize_register( $wp_customize ) {
     );
 }
 add_action( 'customize_register', 'wyvern_customize_register' );
+
+/* select sanitization function
+* @see https://divpusher.com/blog/wordpress-customizer-sanitization-examples/#select
+*/
+function wyvern_sanitize_select( $input, $setting ){
+          
+    //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
+    $input = sanitize_key($input);
+
+    //get the list of possible select options 
+    $choices = $setting->manager->get_control( $setting->id )->choices;
+                      
+    //return input if valid or return default option
+    return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
+
+/* file input sanitization function
+* @see https://divpusher.com/blog/wordpress-customizer-sanitization-examples/#file
+*/
+function wyvern_sanitize_file( $file, $setting ) {
+          
+    //allowed file types
+    $mimes = array(
+        'jpg|jpeg|jpe' => 'image/jpeg',
+        'gif'          => 'image/gif',
+        'png'          => 'image/png'
+    );
+      
+    //check file type from file name
+    $file_ext = wp_check_filetype( $file, $mimes );
+      
+    //if file has a valid mime type return it, otherwise return default
+    return ( $file_ext['ext'] ? $file : $setting->default );
+}

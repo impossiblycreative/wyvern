@@ -1,9 +1,12 @@
+.page-links,
 .pagination {
+    clear: both;
     flex: 0 1 100%;
     padding: 20px;
     padding: 2rem;
     text-align: center;
 
+    .post-page-numbers,
     .page-numbers {
         background: var(--pagination-color);
         border-radius: var(--border-radius);

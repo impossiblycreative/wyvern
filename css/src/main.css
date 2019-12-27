@@ -48,6 +48,7 @@
 
 @import 'elements/_standard-elements.css';
 @import 'elements/_custom-elements.css';
+@import 'elements/_wordpress.css';
 @import 'elements/_gutenberg.css';
 
 @import 'elements/custom-elements/blocks/_slider-block.css';

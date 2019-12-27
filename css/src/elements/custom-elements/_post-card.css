@@ -10,6 +10,12 @@
     max-width: 300px;
     min-width: 240px;
 
+    &.sticky {
+        background: var(--post-card-background-color-sticky);
+        border: var(--border-heavy);
+        border-color: var(--post-card-border-color-sticky);
+    }
+
     @media (--menu-button-query) {
         margin: 0 20px 40px;
         margin: 0 2rem 4rem;
