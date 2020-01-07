@@ -1,6 +1,6 @@
 <?php
 // Include class files
-require_once get_stylesheet_directory() . '/inc/widgets/class-wyvern-popular-posts-widget.php';
+require_once get_template_directory() . '/inc/widgets/class-wyvern-popular-posts-widget.php';
 
 // Register all of our widgets
 function wyvern_register_widgets() {

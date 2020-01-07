@@ -7,31 +7,31 @@
  */
 
 // General functionality
-require get_stylesheet_directory() . '/inc/general/scripts-styles.php';
-require get_stylesheet_directory() . '/inc/general/theme-supports.php';
-require get_stylesheet_directory() . '/inc/general/image-sizes.php';
-require get_stylesheet_directory() . '/inc/general/menus.php';
-require get_stylesheet_directory() . '/inc/general/sidebars.php';
-require get_stylesheet_directory() . '/inc/general/body-class.php';
-require get_stylesheet_directory() . '/inc/general/content.php';
+require get_template_directory() . '/inc/general/scripts-styles.php';
+require get_template_directory() . '/inc/general/theme-supports.php';
+require get_template_directory() . '/inc/general/image-sizes.php';
+require get_template_directory() . '/inc/general/menus.php';
+require get_template_directory() . '/inc/general/sidebars.php';
+require get_template_directory() . '/inc/general/body-class.php';
+require get_template_directory() . '/inc/general/content.php';
 
 
 // Widgets
-require get_stylesheet_directory() . '/inc/widgets/register-widgets.php';
+require get_template_directory() . '/inc/widgets/register-widgets.php';
 
 
 // AJAX functionality
-require get_stylesheet_directory() . '/inc/ajax/posts-block-categories-filter.php';
-require get_stylesheet_directory() . '/inc/ajax/cookie-button.php';
-require get_stylesheet_directory() . '/inc/ajax/like-button.php';
+require get_template_directory() . '/inc/ajax/posts-block-categories-filter.php';
+require get_template_directory() . '/inc/ajax/cookie-button.php';
+require get_template_directory() . '/inc/ajax/like-button.php';
 
 
 // Classes
-require get_stylesheet_directory() . '/inc/classes/class-wyvern-nav-walker.php';
+require get_template_directory() . '/inc/classes/class-wyvern-nav-walker.php';
 
 
 // Customizer
-require get_stylesheet_directory() . '/inc/customizer/register.php';
-require get_stylesheet_directory() . '/inc/customizer/css.php';
+require get_template_directory() . '/inc/customizer/register.php';
+require get_template_directory() . '/inc/customizer/css.php';
 
 add_theme_support( 'responsive-embeds' );
