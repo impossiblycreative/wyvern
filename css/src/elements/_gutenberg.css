@@ -20,8 +20,7 @@
     .blocks-gallery-item {
         figcaption,
         .gallery-caption {
-            /* Using the default Gutenberg style until we have a better idea */
-            linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,.3) 70%,transparent);
+            background: linear-gradient(0%,rgba(0,0,0,.7),rgba(0,0,0,.3) 70%,transparent);
         }
     }
 }

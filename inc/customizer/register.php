@@ -95,7 +95,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
-            'sanitize_callback' => 'wyvern_sanitize_select',
+            'sanitize_callback' => 'wyvern_sanitize_page_dropdown',
         )
     );
 
@@ -338,7 +338,7 @@ function wyvern_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
-            'sanitize_callback' => 'wyvern_sanitize_select',
+            'sanitize_callback' => 'wyvern_sanitize_page_dropdown',
         )
     );
 
@@ -399,7 +399,8 @@ function wyvern_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'wyvern_customize_register' );
 
-/* select sanitization function
+/**
+* select sanitization function
 * @see https://divpusher.com/blog/wordpress-customizer-sanitization-examples/#select
 */
 function wyvern_sanitize_select( $input, $setting ){
@@ -414,7 +415,20 @@ function wyvern_sanitize_select( $input, $setting ){
     return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }
 
-/* file input sanitization function
+/**
+* Sanitize prepoulated page select dropdowns
+* @see https://forums.envato.com/t/select-sanitize-callback-in-wp-customizer/51740
+*/
+function wyvern_sanitize_page_dropdown( $page_id, $setting ) {
+    // Ensure $input is an absolute integer.
+    $page_id = absint( $page_id );
+  
+    // If $page_id is an ID of a published page, return it; otherwise, return the default.
+    return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
+}
+
+/** 
+* file input sanitization function
 * @see https://divpusher.com/blog/wordpress-customizer-sanitization-examples/#file
 */
 function wyvern_sanitize_file( $file, $setting ) {

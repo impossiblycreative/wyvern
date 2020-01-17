@@ -25,5 +25,5 @@
 <div class="cookie-bar <?php echo $has_cookie ? 'hide' : 'show'; ?>">
     <p class="cookie-bar-text"><?php echo esc_html( $cookie_text ) ?></p>
     <button id="cookie-button" data-nonce="<?php echo $nonce; ?>"><?php esc_html_e( 'Okay', 'wyvern' ); ?></button>
-    <a class="button" href="<?php echo esc_url( $cookie_page ); ?>"><?php echo esc_html( $cookie_button_text ); ?></a>
+    <a class="button" href="<?php echo esc_url( get_the_permalink( $cookie_page ) ); ?>"><?php echo esc_html( $cookie_button_text ); ?></a>
 </div>
