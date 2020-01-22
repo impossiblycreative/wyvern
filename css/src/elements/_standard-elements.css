@@ -56,6 +56,12 @@ a {
     }
 }
 
+figure.alignwide,
+figure.alignfull {
+    margin: 10px 0;
+    margin: 1rem 0;
+}
+
 img,
 .wp-block-media-text > figure > img {
     border-radius: var(--border-radius);
@@ -63,6 +69,19 @@ img,
     height: auto;
     max-width: 100%;
     width: auto;
+
+    .alignwide &,
+    .alignfull & {
+        border-radius: 0;
+    }
+}
+
+img.entry-header-image {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
 }
 
 button,
@@ -151,12 +170,4 @@ input[type=submit],
         color: var(--button-text-color-disabled);
         pointer-events: none;
     }
-}
-
-img.entry-header-image {
-    display: block;
-    height: auto;
-    margin: 0 auto;
-    max-width: 100%;
-    width: 100%;
 }

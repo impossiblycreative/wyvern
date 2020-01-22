@@ -1,13 +1,12 @@
 .entry-content {
     background: var(--white);
-    margin: 0 auto;
-    max-width: var(--measure);
     padding: 20px 20px 0;
     padding: 2rem 2rem 0;
+    width: 100%;
 
-    @media (--menu-query) {
-        max-width: 720px;
-        max-width: 72rem;
+    .home &,
+    .home.page & {
+        padding: 0;
     }
 
     .single-post & {
@@ -36,5 +35,15 @@
 
     > :last-child {
         margin-bottom: 0;
+    }
+
+    > *:not(.wp-block-cover):not(.alignwide):not(.alignfull) {
+        margin: 0 auto;
+        max-width: var(--measure);
+
+        @media (--menu-query) {
+            max-width: 720px;
+            max-width: 72rem;
+        }
     }
 }

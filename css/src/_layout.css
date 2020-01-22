@@ -33,7 +33,6 @@
             align-items: center;
             display: flex;
             flex-flow: row wrap;
-            min-height: 100vh;
 
             .home-block {
                 flex: 0 1 100%;
