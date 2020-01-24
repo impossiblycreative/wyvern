@@ -46,4 +46,8 @@
             max-width: 72rem;
         }
     }
+
+    .single-post & > *:not(.wp-block-cover):not(.alignwide):not(.alignfull) {
+        max-width: 100%;
+    }
 }
