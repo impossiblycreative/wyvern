@@ -17,9 +17,11 @@ if ( searchToggle ) {
 }
 
 // Open the search form if the search field or search button is focused
-searchInput.addEventListener( 'focus', openSearch );
-searchButton.addEventListener( 'focus', openSearch );
-searchButton.addEventListener( 'blur', closeSearch );
+if ( searchInput ) {
+    searchInput.addEventListener( 'focus', openSearch );
+    searchButton.addEventListener( 'focus', openSearch );
+    searchButton.addEventListener( 'blur', closeSearch );
+}
 
 // Toggle the mobile menu
 if ( mobileMenuToggle ) {
