@@ -198,6 +198,28 @@ function wyvern_customize_register( $wp_customize ) {
         ) 
     );
 
+    // Setting: GitHub Link
+    $wp_customize->add_setting( 
+        'github_link', 
+        array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'esc_url',
+        )
+    );
+
+    // Control: GitHub Link
+    $wp_customize->add_control( 
+        'github_link', 
+        array(
+            'label' => __( 'GitHub Link', 'wyvern' ),
+            'description' => __( 'Link your GitHub page here. Used throughout the site.', 'wyvern' ),
+            'type' => 'text',
+            'section' => 'wyvern_theme_settings_general',
+        ) 
+    );
+
     // Setting: YouTube Link
     $wp_customize->add_setting( 
         'youtube_link', 
@@ -286,29 +308,6 @@ function wyvern_customize_register( $wp_customize ) {
         ) 
     );
 
-    // Setting: Progress Bar Icon
-    $wp_customize->add_setting( 
-        'progress_bar_icon', 
-        array(
-            'type' => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'transport' => 'refresh',
-            'sanitize_callback' => 'wyvern_sanitize_file',
-        )
-    );
-
-    // Control: Progress Bar Icon
-    $wp_customize->add_control( 
-        new WP_Customize_Image_Control(
-            $wp_customize,
-            'progress_bar_icon',
-            array(
-                'label'      => __( 'Upload an icon', 'wyvern' ),
-                'section'    => 'wyvern_theme_settings_single_posts',
-            )
-        )
-    );
-
     // Setting: Affiliate Link Notification - Text
     $wp_customize->add_setting( 
         'affiliate_link_notification_text', 
@@ -369,10 +368,34 @@ function wyvern_customize_register( $wp_customize ) {
         'footer_statement', 
         array(
             'label' => __( 'Footer Statement', 'wyvern' ),
-            'description' => __( 'This text will display on a line before the logo', 'wyvern' ),
+            'description' => __( 'This text will display on a line after the logo', 'wyvern' ),
             'type' => 'textarea',
             'section' => 'wyvern_theme_settings_footer',
         ) 
+    );
+
+    // Setting: Footer Logo
+    $wp_customize->add_setting( 
+        'footer_logo', 
+        array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'wyvern_sanitize_file',
+        )
+    );
+
+    // Control: Footer Logo
+    $wp_customize->add_control( 
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'footer_logo',
+            array(
+                'label'      => __( 'Footer logo', 'wyvern' ),
+                'description' => __( 'If a logo is not uploaded, the header logo will be used.', 'wyvern' ),
+                'section'    => 'wyvern_theme_settings_footer',
+            )
+        )
     );
 
     // Setting: Footer Copyright Info

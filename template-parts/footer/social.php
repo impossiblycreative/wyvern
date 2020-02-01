@@ -23,6 +23,14 @@
     </li>
     <?php endif; ?>
 
+    <?php if ( !empty( get_theme_mod( 'github_link' ) ) ) : ?>
+    <li class="social-icon">
+        <a href="<?php echo esc_url( get_theme_mod( 'github_link' ) ); ?>" target="_blank" title="Link to GitHub Profile">
+            <span class="fab fa-github"></span>
+        </a>
+    </li>
+    <?php endif; ?>
+
     <?php if ( !empty( get_theme_mod( 'youtube_link' ) ) ) : ?>
     <li class="social-icon">
         <a href="<?php echo esc_url( get_theme_mod( 'youtube_link' ) ); ?>" target="_blank" title="Link to YouTube Profile">

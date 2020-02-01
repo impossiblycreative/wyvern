@@ -41,14 +41,8 @@ function wyvern_load_theme_assets() {
 		wp_enqueue_script( 'wyvern-likes', trailingslashit( get_template_directory_uri() ) . 'js/likes.js', array( 'jquery' ), NULL, true );
 		wp_enqueue_script( 'wyvern-progress-bar', trailingslashit( get_template_directory_uri() ) . 'js/progress-bar.js', array( 'jquery' ), NULL, true );
 
-		// Set up our customizer objects
-		$wyvern_options = array(
-			'progress_bar_icon'   => get_theme_mod( 'progress_bar_icon', false ),
-		);
-
 		// Localize the scripts
 		wp_localize_script( 'wyvern-likes', 'likeButton', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
-		wp_localize_script( 'wyvern-progress-bar', 'wyvern_options', $wyvern_options );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'wyvern_load_theme_assets' );
