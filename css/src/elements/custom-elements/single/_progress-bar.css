@@ -7,6 +7,10 @@
     top: 12px;
     width: auto;
 
+    .admin-bar & {
+        top: 44px;
+    }
+
     .progress-bar-icon {
         display: block;
         height: auto;
