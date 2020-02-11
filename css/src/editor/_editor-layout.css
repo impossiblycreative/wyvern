@@ -4,3 +4,7 @@
         max-width: 100%;
     }
 }
+
+.edit-post-sidebar p {
+    font-size: 13px;
+}

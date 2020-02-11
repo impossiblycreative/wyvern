@@ -1,174 +1,184 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: var(--font-special);
-    margin: 0 0 10px;
-    margin: 0 0 1rem;
-    text-transform: uppercase;
-    word-break: break-word;
-    word-wrap: break-word;
+html {
+	font-size: 62.5%; /* Base 10, please */
 }
 
-h1 {
-    font-size: calc(var(--s3) * 0.75);
+.wp-admin {
+    font-size: 1.6rem;
 
-    @media (--content-query) {
-        font-size: var(--s3);
-    }
-}
-
-h2 {
-    font-size: calc(var(--s2) * 0.75);
-
-    @media (--content-query) {
-        font-size: var(--s2);
-    }
-}
-
-h3 {
-    font-size: calc( var(--s2) * 0.85);
-}
-
-p,
-ul,
-ol {
-    font-size: 20px;
-    font-size: 2rem;
-    line-height: 1.75;
-}
-
-p {
-    margin: 20px 0;
-    margin: 2rem 0;
-}
-
-a {
-    color: var(--link-color);
-    transition: color var(--linear);
-
-    &:hover,
-    &:focus,
-    &:active {
-        color: var(--link-color-hover);
-    }
-}
-
-figure.alignwide,
-figure.alignfull {
-    margin: 10px 0;
-    margin: 1rem 0;
-}
-
-img,
-.wp-block-media-text > figure > img {
-    border-radius: var(--border-radius);
-    display: block;
-    height: auto;
-    max-width: 100%;
-    width: auto;
-
-    .alignwide &,
-    .alignfull & {
-        border-radius: 0;
-    }
-}
-
-img.entry-header-image {
-    display: block;
-    height: auto;
-    margin: 0 auto;
-    max-width: 100%;
-    width: 100%;
-}
-
-.edit-post-sidebar__panel-tab {
-    font-size: initial;
-}
-
-.wp-block-button__link {
-    background: var(--button-color);
-    border-radius: var(--border-radius);
-    color: var(--button-text-color);
-    display: inline-block;
-    font-size: 14px;
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 0;
-    padding: 10px 20px;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: background-color var(--linear), color var(--linear);
-
-    &:hover,
-    &:focus,
-    &:active {
-        background: var(--button-color-hover);
-        color: var(--button-text-color-hover);
-    }
-
-    &.alt {
-        background: var(--button-color-alt);
-        color: var(--button-text-color-alt);
-
-        &:hover,
-        &:focus,
-        &:active {
-            background: var(--button-color-alt-hover);
-            color: var(--button-text-color-alt-hover);
+    div:not(.edit-post-sidebar) {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-special);
+            margin: 0 0 10px;
+            margin: 0 0 1rem;
+            text-transform: uppercase;
+            word-break: break-word;
+            word-wrap: break-word;
         }
-    }
 
-    &.like {
-        background: var(--like);
+        h1 {
+            font-size: calc(var(--s3) * 0.75);
 
-        &:hover,
-        &:focus,
-        &:active {
-            background: var(--button-color-hover);
-            color: var(--button-text-color-hover);
+            @media (--content-query) {
+                font-size: var(--s3);
+            }
         }
-    }
 
-    &.facebook {
-        background: var(--facebook);
+        h2 {
+            font-size: calc(var(--s2) * 0.75);
 
-        &:hover,
-        &:focus,
-        &:active {
-            background: var(--button-color-hover);
-            color: var(--button-text-color-hover);
+            @media (--content-query) {
+                font-size: var(--s2);
+            }
         }
-    }
 
-    &.pinterest {
-        background: var(--pinterest);
-
-        &:hover,
-        &:focus,
-        &:active {
-            background: var(--button-color-hover);
-            color: var(--button-text-color-hover);
+        h3 {
+            font-size: calc( var(--s2) * 0.85);
         }
-    }
 
-    &.twitter {
-        background: var(--twitter);
-
-        &:hover,
-        &:focus,
-        &:active {
-            background: var(--button-color-hover);
-            color: var(--button-text-color-hover);
+        p,
+        ul,
+        ol {
+            font-size: 20px;
+            font-size: 2rem;
+            line-height: 1.75;
         }
-    }
 
-    &.disabled {
-        background: var(--button-color-disabled);
-        color: var(--button-text-color-disabled);
-        pointer-events: none;
+        p {
+            margin: 20px 0;
+            margin: 2rem 0;
+        }
+
+        a {
+            color: var(--link-color);
+            transition: color var(--linear);
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: var(--link-color-hover);
+            }
+        }
+
+        figure.alignwide,
+        figure.alignfull {
+            margin: 10px 0;
+            margin: 1rem 0;
+        }
+
+        img,
+        .wp-block-media-text > figure > img {
+            border-radius: var(--border-radius);
+            display: block;
+            height: auto;
+            max-width: 100%;
+            width: auto;
+
+            .alignwide &,
+            .alignfull & {
+                border-radius: 0;
+            }
+        }
+
+        img.entry-header-image {
+            display: block;
+            height: auto;
+            margin: 0 auto;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .edit-post-sidebar__panel-tab {
+            font-size: initial;
+        }
+
+        .wp-block-button__link {
+            background: var(--button-color);
+            border-radius: var(--border-radius);
+            color: var(--button-text-color);
+            display: inline-block;
+            font-size: 14px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0;
+            padding: 10px 20px;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: background-color var(--linear), color var(--linear);
+
+            &:hover,
+            &:focus,
+            &:active {
+                background: var(--button-color-hover);
+                color: var(--button-text-color-hover);
+            }
+
+            &.alt {
+                background: var(--button-color-alt);
+                color: var(--button-text-color-alt);
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background: var(--button-color-alt-hover);
+                    color: var(--button-text-color-alt-hover);
+                }
+            }
+
+            &.like {
+                background: var(--like);
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background: var(--button-color-hover);
+                    color: var(--button-text-color-hover);
+                }
+            }
+
+            &.facebook {
+                background: var(--facebook);
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background: var(--button-color-hover);
+                    color: var(--button-text-color-hover);
+                }
+            }
+
+            &.pinterest {
+                background: var(--pinterest);
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background: var(--button-color-hover);
+                    color: var(--button-text-color-hover);
+                }
+            }
+
+            &.twitter {
+                background: var(--twitter);
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background: var(--button-color-hover);
+                    color: var(--button-text-color-hover);
+                }
+            }
+
+            &.disabled {
+                background: var(--button-color-disabled);
+                color: var(--button-text-color-disabled);
+                pointer-events: none;
+            }
+        }
     }
 }
