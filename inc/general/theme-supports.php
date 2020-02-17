@@ -53,6 +53,8 @@ function wyvern_setup() {
             ),
         )
     );
+
+    add_theme_support('editor-styles');
 }
 add_action( 'after_setup_theme', 'wyvern_setup', 20 );
 

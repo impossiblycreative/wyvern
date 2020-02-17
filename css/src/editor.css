@@ -5,5 +5,4 @@
 @import '_theming.css';
 @import '_globals.css';
 
-@import 'editor/_editor-layout.css';
-@import 'editor/_base-typography.css';
+@import 'editor/_editor-style.css';

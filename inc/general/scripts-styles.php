@@ -51,8 +51,6 @@ add_action( 'wp_enqueue_scripts', 'wyvern_load_theme_assets' );
  * Load editor assets
  */
 function wyvern_load_editor_assets() {
-
-	// Load main CSS file
-	wp_enqueue_style( 'wyvern-editor-styles', get_template_directory_uri() . '/css/build/editor.css', NULL, '1.0.0', 'all' );
+	add_editor_style( 'css/build/editor.css' );
 }
-add_action( 'enqueue_block_editor_assets', 'wyvern_load_editor_assets' );
+add_action( 'after_setup_theme', 'wyvern_load_editor_assets' );
