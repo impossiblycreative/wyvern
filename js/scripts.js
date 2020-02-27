@@ -17,7 +17,7 @@ if ( searchToggle ) {
 }
 
 // Open the search form if the search field or search button is focused
-if ( searchInput ) {
+if ( searchInput && searchButton ) {
     searchInput.addEventListener( 'focus', openSearch );
     searchButton.addEventListener( 'focus', openSearch );
     searchButton.addEventListener( 'blur', closeSearch );

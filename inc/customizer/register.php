@@ -34,6 +34,17 @@ function wyvern_customize_register( $wp_customize ) {
     );
 
 	$wp_customize->add_section(
+		'wyvern_theme_settings_social_media',
+		array(
+			'title'       => __( 'Social Media', 'wyvern' ),
+			'description' => __( 'All of your social media profiles', 'wyvern' ),
+            'capability'  => 'edit_theme_options',
+            'panel'       => 'wyvern_theme_settings',
+			'priority'    => 40,
+		)
+    );
+
+	$wp_customize->add_section(
 		'wyvern_theme_settings_newsletter',
 		array(
 			'title'       => __( 'Newsletter', 'wyvern' ),
@@ -150,7 +161,7 @@ function wyvern_customize_register( $wp_customize ) {
             'label' => __( 'Facebook Link', 'wyvern' ),
             'description' => __( 'Link your Facebook page here. Used throughout the site.', 'wyvern' ),
             'type' => 'text',
-            'section' => 'wyvern_theme_settings_general',
+            'section' => 'wyvern_theme_settings_social_media',
         ) 
     );
 
@@ -172,7 +183,7 @@ function wyvern_customize_register( $wp_customize ) {
             'label' => __( 'Twitter Link', 'wyvern' ),
             'description' => __( 'Link your Twitter page here. Used throughout the site.', 'wyvern' ),
             'type' => 'text',
-            'section' => 'wyvern_theme_settings_general',
+            'section' => 'wyvern_theme_settings_social_media',
         ) 
     );
 
@@ -194,7 +205,7 @@ function wyvern_customize_register( $wp_customize ) {
             'label' => __( 'Instagram Link', 'wyvern' ),
             'description' => __( 'Link your Instagram page here. Used throughout the site.', 'wyvern' ),
             'type' => 'text',
-            'section' => 'wyvern_theme_settings_general',
+            'section' => 'wyvern_theme_settings_social_media',
         ) 
     );
 
@@ -216,7 +227,7 @@ function wyvern_customize_register( $wp_customize ) {
             'label' => __( 'GitHub Link', 'wyvern' ),
             'description' => __( 'Link your GitHub page here. Used throughout the site.', 'wyvern' ),
             'type' => 'text',
-            'section' => 'wyvern_theme_settings_general',
+            'section' => 'wyvern_theme_settings_social_media',
         ) 
     );
 
@@ -238,7 +249,7 @@ function wyvern_customize_register( $wp_customize ) {
             'label' => __( 'YouTube Link', 'wyvern' ),
             'description' => __( 'Link your YouTube page here. Used throughout the site.', 'wyvern' ),
             'type' => 'text',
-            'section' => 'wyvern_theme_settings_general',
+            'section' => 'wyvern_theme_settings_social_media',
         ) 
     );
 
@@ -260,7 +271,7 @@ function wyvern_customize_register( $wp_customize ) {
             'label' => __( 'Twitch Link', 'wyvern' ),
             'description' => __( 'Link your Twitch page here. Used throughout the site.', 'wyvern' ),
             'type' => 'text',
-            'section' => 'wyvern_theme_settings_general',
+            'section' => 'wyvern_theme_settings_social_media',
         ) 
     );
 

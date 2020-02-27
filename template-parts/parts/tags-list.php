@@ -17,7 +17,7 @@ if ( $post_tags ) {
     echo '<ul class="tags-list">';
 
     foreach( $post_tags as $tag) {
-        $current_tag = get_category( $tag );
+        $current_tag = get_tag( $tag );
     ?>
         <li class="tags-list-item">
             <a href="<?php echo esc_url( get_tag_link( $current_tag->term_id ) ); ?>">
