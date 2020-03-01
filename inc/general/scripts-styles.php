@@ -8,7 +8,16 @@ function wyvern_load_theme_assets() {
 	wp_enqueue_style( 'wyvern-styles', get_template_directory_uri() . '/css/build/main.min.css', NULL, '1.0.0', 'all' );
 
 	// Google Fonts
-    //wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Josefin+Sans:400,700&display=swap' );
+	$primary_font 	= get_theme_mod( 'typography_font_primary' );
+	$secondary_font = get_theme_mod( 'typography_font_secondary' );
+
+	if ( $primary_font ) {
+		if ( $secondary_font ) {
+			wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=' . $primary_font . ':400,700|' . $secondary_font . '&display=swap' );
+		} else {
+			wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=' . $primary_font . ':400,700&display=swap' );
+		}
+	}
 
 	// Font Awesome
 	wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/8ca253b275.js', NULL, NULL, false );

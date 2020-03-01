@@ -6,12 +6,12 @@
  */
 
 /**
- * Registers customerizer controls
+ * Registers customizer controls for the theme
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function wyvern_customize_register( $wp_customize ) {
-    // Add our panels
+function wyvern_customizer_theme_settings_panel( $wp_customize ) {
+    // Add our panel
     $wp_customize->add_panel( 
         'wyvern_theme_settings',
         array(
@@ -44,27 +44,29 @@ function wyvern_customize_register( $wp_customize ) {
 		)
     );
 
-	$wp_customize->add_section(
-		'wyvern_theme_settings_newsletter',
-		array(
-			'title'       => __( 'Newsletter', 'wyvern' ),
-			'description' => __( 'Controls the display of the Newsletter Signup Block', 'wyvern' ),
-            'capability'  => 'edit_theme_options',
-            'panel'       => 'wyvern_theme_settings',
-			'priority'    => 40,
-		)
-    );
+    /* DISABLING UNTIL FULLY DEVELOPED
+        $wp_customize->add_section(
+            'wyvern_theme_settings_newsletter',
+            array(
+                'title'       => __( 'Newsletter', 'wyvern' ),
+                'description' => __( 'Controls the display of the Newsletter Signup Block', 'wyvern' ),
+                'capability'  => 'edit_theme_options',
+                'panel'       => 'wyvern_theme_settings',
+                'priority'    => 40,
+            )
+        );
 
-	$wp_customize->add_section(
-		'wyvern_theme_settings_single_posts',
-		array(
-			'title'       => __( 'Single Posts', 'wyvern' ),
-			'description' => __( 'Features for single posts.', 'wyvern' ),
-            'capability'  => 'edit_theme_options',
-            'panel'       => 'wyvern_theme_settings',
-			'priority'    => 40,
-		)
-    );
+        $wp_customize->add_section(
+            'wyvern_theme_settings_single_posts',
+            array(
+                'title'       => __( 'Single Posts', 'wyvern' ),
+                'description' => __( 'Features for single posts.', 'wyvern' ),
+                'capability'  => 'edit_theme_options',
+                'panel'       => 'wyvern_theme_settings',
+                'priority'    => 40,
+            )
+        );
+    */
 
 	$wp_customize->add_section(
 		'wyvern_theme_settings_footer',
@@ -275,93 +277,95 @@ function wyvern_customize_register( $wp_customize ) {
         ) 
     );
 
-    // Setting: Newsletter Signup Form Name
-    $wp_customize->add_setting( 
-        'newsletter_signup_form_name', 
-        array(
-            'type' => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'transport' => 'refresh',
-            'sanitize_callback' => 'wp_filter_nohtml_kses',
-        )
-    );
+    /* DISABLING UNTIL FULLY DEVELOPED
+        // Setting: Newsletter Signup Form Name
+        $wp_customize->add_setting( 
+            'newsletter_signup_form_name', 
+            array(
+                'type' => 'theme_mod',
+                'capability' => 'edit_theme_options',
+                'transport' => 'refresh',
+                'sanitize_callback' => 'wp_filter_nohtml_kses',
+            )
+        );
 
-    // Control: Newsletter Signup Form Name
-    $wp_customize->add_control( 
-        'newsletter_signup_form_name', 
-        array(
-            'label' => __( 'Newsletter Signup Form Name', 'wyvern' ),
-            'description' => __( 'What is the name of your newletter signup form?', 'wyvern' ),
-            'type' => 'text',
-            'section' => 'wyvern_theme_settings_newsletter',
-        ) 
-    );
+        // Control: Newsletter Signup Form Name
+        $wp_customize->add_control( 
+            'newsletter_signup_form_name', 
+            array(
+                'label' => __( 'Newsletter Signup Form Name', 'wyvern' ),
+                'description' => __( 'What is the name of your newletter signup form?', 'wyvern' ),
+                'type' => 'text',
+                'section' => 'wyvern_theme_settings_newsletter',
+            ) 
+        );
 
-    // Setting: Newsletter Signup Form Prompt
-    $wp_customize->add_setting( 
-        'newsletter_signup_form_prompt', 
-        array(
-            'type' => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'transport' => 'refresh',
-            'sanitize_callback' => 'wp_filter_nohtml_kses',
-        )
-    );
+        // Setting: Newsletter Signup Form Prompt
+        $wp_customize->add_setting( 
+            'newsletter_signup_form_prompt', 
+            array(
+                'type' => 'theme_mod',
+                'capability' => 'edit_theme_options',
+                'transport' => 'refresh',
+                'sanitize_callback' => 'wp_filter_nohtml_kses',
+            )
+        );
 
-    // Control: Newsletter Signup Form Prompt
-    $wp_customize->add_control( 
-        'newsletter_signup_form_prompt', 
-        array(
-            'label' => __( 'Newsletter Signup Form Prompt', 'wyvern' ),
-            'description' => __( 'What text should go above your newsletter signup form?', 'wyvern' ),
-            'type' => 'text',
-            'section' => 'wyvern_theme_settings_newsletter',
-        ) 
-    );
+        // Control: Newsletter Signup Form Prompt
+        $wp_customize->add_control( 
+            'newsletter_signup_form_prompt', 
+            array(
+                'label' => __( 'Newsletter Signup Form Prompt', 'wyvern' ),
+                'description' => __( 'What text should go above your newsletter signup form?', 'wyvern' ),
+                'type' => 'text',
+                'section' => 'wyvern_theme_settings_newsletter',
+            ) 
+        );
 
-    // Setting: Affiliate Link Notification - Text
-    $wp_customize->add_setting( 
-        'affiliate_link_notification_text', 
-        array(
-            'type' => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'transport' => 'refresh',
-            'sanitize_callback' => 'wp_filter_nohtml_kses',
-        )
-    );
+        // Setting: Affiliate Link Notification - Text
+        $wp_customize->add_setting( 
+            'affiliate_link_notification_text', 
+            array(
+                'type' => 'theme_mod',
+                'capability' => 'edit_theme_options',
+                'transport' => 'refresh',
+                'sanitize_callback' => 'wp_filter_nohtml_kses',
+            )
+        );
 
-    // Control: Affiliate Link Notification - Text
-    $wp_customize->add_control( 
-        'affiliate_link_notification_text', 
-        array(
-            'label' => __( 'Affiliate Link Notification - Text', 'wyvern' ),
-            'description' => __( 'What text should be shown as your affiliate link notification?', 'wyvern' ),
-            'type' => 'text',
-            'section' => 'wyvern_theme_settings_single_posts',
-        ) 
-    );
+        // Control: Affiliate Link Notification - Text
+        $wp_customize->add_control( 
+            'affiliate_link_notification_text', 
+            array(
+                'label' => __( 'Affiliate Link Notification - Text', 'wyvern' ),
+                'description' => __( 'What text should be shown as your affiliate link notification?', 'wyvern' ),
+                'type' => 'text',
+                'section' => 'wyvern_theme_settings_single_posts',
+            ) 
+        );
 
-    // Setting: Affiliate Link Notification - Page
-    $wp_customize->add_setting( 
-        'affiliate_link_notification_page', 
-        array(
-            'type' => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'transport' => 'refresh',
-            'sanitize_callback' => 'wyvern_sanitize_page_dropdown',
-        )
-    );
+        // Setting: Affiliate Link Notification - Page
+        $wp_customize->add_setting( 
+            'affiliate_link_notification_page', 
+            array(
+                'type' => 'theme_mod',
+                'capability' => 'edit_theme_options',
+                'transport' => 'refresh',
+                'sanitize_callback' => 'wyvern_sanitize_page_dropdown',
+            )
+        );
 
-    // Control: Affiliate Link Notification - Page
-    $wp_customize->add_control( 
-        'affiliate_link_notification_page', 
-        array(
-            'label' => __( 'Affiliate Link Notification - Page', 'wyvern' ),
-            'description' => __( 'What page should we link to?', 'wyvern' ),
-			'type'     => 'dropdown-pages',
-            'section' => 'wyvern_theme_settings_single_posts',
-        ) 
-    );
+        // Control: Affiliate Link Notification - Page
+        $wp_customize->add_control( 
+            'affiliate_link_notification_page', 
+            array(
+                'label' => __( 'Affiliate Link Notification - Page', 'wyvern' ),
+                'description' => __( 'What page should we link to?', 'wyvern' ),
+                'type'     => 'dropdown-pages',
+                'section' => 'wyvern_theme_settings_single_posts',
+            ) 
+        );
+    */
 
     // Setting: Footer Statement
     $wp_customize->add_setting( 
@@ -431,7 +435,250 @@ function wyvern_customize_register( $wp_customize ) {
         ) 
     );
 }
-add_action( 'customize_register', 'wyvern_customize_register' );
+add_action( 'customize_register', 'wyvern_customizer_theme_settings_panel' );
+
+
+/**
+ * Registers customizer controls for colors
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
+function wyvern_customizer_color_settings_panel( $wp_customize ) {
+    // Add our panel
+    $wp_customize->add_panel( 
+        'wyvern_color_settings',
+        array(
+            'title' => __( 'Color Settings', 'wyvern' ),
+			'description' => __( 'Customize your theme\'s colors', 'wyvern' ),
+            'priority' => 40,
+        )
+    );
+
+    // Add our sections
+	$wp_customize->add_section(
+		'wyvern_color_settings_header',
+		array(
+			'title'       => __( 'Header & Menu', 'wyvern' ),
+			'description' => __( 'Header and Top Menu Colors', 'wyvern' ),
+            'capability'  => 'edit_theme_options',
+            'panel'       => 'wyvern_color_settings',
+			'priority'    => 40,
+		)
+    );
+
+	$wp_customize->add_section(
+		'wyvern_color_settings_footer',
+		array(
+			'title'       => __( 'Footer', 'wyvern' ),
+			'description' => __( 'Footer and Bottom Menu Colors', 'wyvern' ),
+            'capability'  => 'edit_theme_options',
+            'panel'       => 'wyvern_color_settings',
+			'priority'    => 40,
+		)
+    );
+
+    // Setting: Colors - Header Background
+    $wp_customize->add_setting( 
+        'colors_header_background', 
+        array(
+            'type' => 'theme_mod',
+            'default' => '#000000',
+            'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
+        )
+    );
+
+    // Control: Colors - Header Background
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control( $wp_customize, 
+            'colors_header_background',
+            array(
+                'label' => __( 'Background Color', 'wyvern' ),
+                'description' => __( 'Sets the primary header background color' ),
+                'section' => 'wyvern_color_settings_header',
+            ) 
+        ) 
+    );
+
+    // Setting: Colors - Nav Item
+    $wp_customize->add_setting( 
+        'colors_nav_item', 
+        array(
+            'type' => 'theme_mod',
+            'default' => '#FFFFFF',
+            'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
+        )
+    );
+
+    // Control: Colors - Nav Item
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control( $wp_customize, 
+            'colors_nav_item',
+            array(
+                'label' => __( 'Menu Item', 'wyvern' ),
+                'description' => __( 'Sets the nav menu text color' ),
+                'section' => 'wyvern_color_settings_header',
+            ) 
+        ) 
+    );
+
+    // Setting: Colors - Nav Item, Hover
+    $wp_customize->add_setting( 
+        'colors_nav_item_hover', 
+        array(
+            'type' => 'theme_mod',
+            'default' => '#C0C0C0',
+            'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
+        )
+    );
+
+    // Control: Colors - Nav Item, Hover
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control( $wp_customize, 
+            'colors_nav_item_hover',
+            array(
+                'label' => __( 'Menu Item - Hover/Focus/Active', 'wyvern' ),
+                'description' => __( 'Sets the hover, focus, and active state color' ),
+                'section' => 'wyvern_color_settings_header',
+            ) 
+        ) 
+    );
+
+    // Setting: Colors - Footer Background
+    $wp_customize->add_setting( 
+        'colors_footer_background', 
+        array(
+            'type' => 'theme_mod',
+            'default' => '#000000',
+            'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
+        )
+    );
+
+    // Control: Colors - Footer Background
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control( $wp_customize, 
+            'colors_footer_background',
+            array(
+                'label' => __( 'Background Color', 'wyvern' ),
+                'description' => __( 'Sets the primary footer background color' ),
+                'section' => 'wyvern_color_settings_footer',
+            ) 
+        ) 
+    );
+
+}
+add_action( 'customize_register', 'wyvern_customizer_color_settings_panel' );
+
+
+/**
+ * Registers customizer controls for colors
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
+function wyvern_customizer_typography_settings_panel( $wp_customize ) {
+    // Add our panel
+    $wp_customize->add_panel( 
+        'wyvern_typography_settings',
+        array(
+            'title' => __( 'Typography Settings', 'wyvern' ),
+			'description' => __( 'Customize your theme\'s fonts & text sizes', 'wyvern' ),
+            'priority' => 40,
+        )
+    );
+
+    // Add our sections
+	$wp_customize->add_section(
+		'wyvern_typography_settings_fonts',
+		array(
+			'title'       => __( 'Fonts', 'wyvern' ),
+			'description' => __( 'Font Settings', 'wyvern' ),
+            'capability'  => 'edit_theme_options',
+            'panel'       => 'wyvern_typography_settings',
+			'priority'    => 40,
+		)
+    );
+
+    // Setting: Typography - Primary Font, used for most text
+    $wp_customize->add_setting( 
+        'typography_font_primary', 
+        array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
+        )
+    );
+
+    // Control: Typography - Primary Font
+    $wp_customize->add_control( 
+        'typography_font_primary', 
+        array(
+            'label' => __( 'Primary Font', 'wyvern' ),
+            'description' => __( 'Used for most text', 'wyvern' ),
+            'type' => 'select',
+            'choices' => array(
+                'Lato' => __( 'Lato', 'wyvern' ),
+                'Lora' => __( 'Lora', 'wyvern' ),
+                'Merriweather' => __( 'Merriweather', 'wyvern' ),
+                'Montserrat' => __( 'Montserrat', 'wyvern' ),
+                'Open+Sans' => __( 'Open Sans', 'wyvern' ),
+                'Oswald' => __( 'Oswald', 'wyvern' ),
+                'Playfair+Display' => __( 'Playfair Display', 'wyvern' ),
+                'Poppins' => __( 'Poppins', 'wyvern' ),
+                'PT+Serif' => __( 'PT Serif', 'wyvern' ),
+                'Raleway' => __( 'Raleway', 'wyvern' ),
+                'Roboto' => __( 'Roboto', 'wyvern' ),
+                'Roboto+Slab' => __( 'Roboto Slab', 'wyvern' ),
+            ),
+            'section' => 'wyvern_typography_settings_fonts',
+        ) 
+    );
+
+    // Setting: Typography - Secondary Font, used for headers
+    $wp_customize->add_setting( 
+        'typography_font_secondary', 
+        array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
+        )
+    );
+
+    // Control: Typography - Secondary Font
+    $wp_customize->add_control( 
+        'typography_font_secondary', 
+        array(
+            'label' => __( 'Secondary Font', 'wyvern' ),
+            'description' => __( 'Used for headers and other special situations', 'wyvern' ),
+            'type' => 'select',
+            'choices' => array(
+                'Lato' => __( 'Lato', 'wyvern' ),
+                'Lora' => __( 'Lora', 'wyvern' ),
+                'Merriweather' => __( 'Merriweather', 'wyvern' ),
+                'Montserrat' => __( 'Montserrat', 'wyvern' ),
+                'Open+Sans' => __( 'Open Sans', 'wyvern' ),
+                'Oswald' => __( 'Oswald', 'wyvern' ),
+                'Playfair+Display' => __( 'Playfair Display', 'wyvern' ),
+                'Poppins' => __( 'Poppins', 'wyvern' ),
+                'PT+Serif' => __( 'PT Serif', 'wyvern' ),
+                'Raleway' => __( 'Raleway', 'wyvern' ),
+                'Roboto' => __( 'Roboto', 'wyvern' ),
+                'Roboto+Slab' => __( 'Roboto Slab', 'wyvern' ),
+            ),
+            'section' => 'wyvern_typography_settings_fonts',
+        ) 
+    );
+}
+add_action( 'customize_register', 'wyvern_customizer_typography_settings_panel' );
+
 
 /**
 * select sanitization function
