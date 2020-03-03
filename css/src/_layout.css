@@ -28,16 +28,6 @@
             flex: 0 1 100%;
             margin-right: 0;
         }
-
-        .home & {
-            align-items: center;
-            display: flex;
-            flex-flow: row wrap;
-
-            .home-block {
-                flex: 0 1 100%;
-            }
-        }
     }
 }
 
