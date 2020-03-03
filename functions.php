@@ -32,6 +32,5 @@ require get_template_directory() . '/inc/classes/class-wyvern-nav-walker.php';
 
 // Customizer
 require get_template_directory() . '/inc/customizer/register.php';
-require get_template_directory() . '/inc/customizer/css.php';
 
 add_theme_support( 'responsive-embeds' );
