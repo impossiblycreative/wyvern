@@ -45,7 +45,7 @@ function wyvern_load_theme_assets() {
 	}
 
 	// Like Button Scripts - Only needed on single posts
-	if ( is_single() ) {
+	if ( is_singular( 'post' ) ) {
 		// Enqueue the scripts
 		wp_enqueue_script( 'wyvern-likes', trailingslashit( get_template_directory_uri() ) . 'js/likes.js', array( 'jquery' ), NULL, true );
 		wp_enqueue_script( 'wyvern-progress-bar', trailingslashit( get_template_directory_uri() ) . 'js/progress-bar.js', array( 'jquery' ), NULL, true );
