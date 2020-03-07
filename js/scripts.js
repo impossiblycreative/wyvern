@@ -5,11 +5,14 @@ const searchButton = document.querySelector( '#header-search .search-submit' );
 const mobileMenuToggle = document.getElementById( 'mobile-menu-toggle' );
 const offCanvas = document.getElementById( 'off-canvas-container' );
 const offCanvasClose = document.getElementById( 'off-canvas-close' );
-const subMenus = document.querySelectorAll( 'li.menu-item-has-children' );
-let focasable;
+const hasSubMenus = document.querySelectorAll( 'li.menu-item-has-children' );
+const menuLinks = document.querySelectorAll( '.menu-item a' );
 let delayTimer;
-let focusTimer;
-let currentSubMenu;
+
+let lastMenuLevel = 0;
+let currentMenuLevel = 0;
+let gainedFocus;
+let lostFocus;
 
 // Toggle the search form
 if ( searchToggle ) {
@@ -29,26 +32,24 @@ if ( mobileMenuToggle ) {
     offCanvasClose.addEventListener( 'click', mobileMenuClose );
 }
 
+// Listen for focus events on our menu links
+if ( menuLinks ) {
+    Array.prototype.forEach.call( menuLinks, function( e, i ) {
+        e.addEventListener( 'focus', menuLinkGainFocus );
+        e.addEventListener( 'blur', menuLinkLoseFocus );
+    } );
+}
+
 // Deal with the sub-menus
-if ( subMenus ) {
-    Array.prototype.forEach.call( subMenus, function( element, iterator ){
+if ( hasSubMenus ) {
+    Array.prototype.forEach.call( hasSubMenus, function( element, iterator ){
         element.addEventListener( 'mouseenter', openSubMenu );
         element.addEventListener( 'mouseleave', closeSubMenu );
 
-        // Get all of the buttons for this sub-menu
         let buttons = element.querySelectorAll( 'button' );
-        let links = element.querySelectorAll( '.sub-menu a' );
-        
-        // Add the focus and blur listeners to every button & link
+
         Array.prototype.forEach.call( buttons, function( e, i ) {
             e.addEventListener( 'click', toggleSubMenu );
-            e.addEventListener( 'focus', subMenuGainFocus );
-            e.addEventListener( 'blur', subMenuLostFocus );
-        } );
-
-        Array.prototype.forEach.call( links, function( e, i ) {
-            e.addEventListener( 'focus', subMenuGainFocus );
-            e.addEventListener( 'blur', subMenuLostFocus );
         } );
     } );
 }
@@ -97,11 +98,6 @@ function mobileMenuClose( event ) {
 
 // Open the sub-menu
 function openSubMenu( event ) {
-    // Close out the currently open submenu if we've moved to a new top-level sub-menu
-    if( this.classList.contains( 'menu-level-0' ) && currentSubMenu ) {
-        currentSubMenu.classList.remove( 'open' );
-        currentSubMenu.setAttribute( 'aria-expanded', 'false' );
-    }
 
     // Open the menu and set the ARIA attributes
     this.classList.add( 'open' );
@@ -109,36 +105,37 @@ function openSubMenu( event ) {
 
     // Set the ARIA on the button as well
     this.children[1].setAttribute( 'aria-expanded', 'true' );
-
-    // Track the current sub-menu
-    currentSubMenu = this;
-
-    // Clear the timer so the menu doesn't arbitrarily close
-    clearTimeout( delayTimer );
 }
 
 // Close the sub-menu after
 function closeSubMenu( event ) {
+    const menu = this;
 
-    // Mark the sub-menu as currenet
-    currentSubMenu = this;
+    // More timer leeway for top-level menus
+    if ( menu.getAttribute( 'data-menu-level' ) === '0' ) {
 
-    // Set our timer to account for motor disabilities
-    delayTimer = setTimeout( function( event ){
-
-        // Close the menu and sete the ARIA attributes
-        if ( currentSubMenu ) {
-            currentSubMenu.classList.remove( 'open' );
-            currentSubMenu.setAttribute( 'aria-expanded', 'false' );
-
+        // Set our timer to account for motor disabilities
+        delayTimer = setTimeout( function( event ){
+            menu.classList.remove('open');
+            menu.setAttribute( 'aria-expanded', 'false' );
+        
             // Set the ARIA on the button as well
-            currentSubMenu.children[1].setAttribute( 'aria-expanded', 'false' );
+            menu.children[1].setAttribute( 'aria-expanded', 'false' );
+        }, 700 );
+    } 
+    else {
 
-            // Clear the current submenu
-            currentSubMenu = false;
-        }
-    }, 1000 );
+        // Set our timer to account for motor disabilities
+        delayTimer = setTimeout( function( event ){
+            menu.classList.remove('open');
+            menu.setAttribute( 'aria-expanded', 'false' );
+        
+            // Set the ARIA on the button as well
+            menu.children[1].setAttribute( 'aria-expanded', 'false' );
+        }, 350 );
+    }
 }
+
 
 // Handle toggling the sub-menu
 function toggleSubMenu( event ) {
@@ -152,26 +149,38 @@ function toggleSubMenu( event ) {
         button.parentNode.classList.toggle( 'open' );
         button.parentNode.setAttribute( 'aria-expanded', 'false' === button.parentNode.getAttribute( 'aria-expanded' ) ? 'true' : 'false' );
         button.setAttribute( 'aria-expanded', 'false' === button.getAttribute( 'aria-expanded' ) ? 'true' : 'false' );
+
+        currentParentMenu = button.parentNode;
     }
 }
 
-// Handle the sub-menu gaining focus
-function subMenuGainFocus( event ) {
-    // If there is an active focus timer, get rid of it because we're still in the sub-menu
-    if ( focusTimer ) {
-        clearTimeout( focusTimer );
-        focusTimer = null;
-    }
-}
+// Handle a menu link gaining focus with the keyboard
+function menuLinkGainFocus( event ) {
+    gainedFocus = event.target.parentNode;
+    currentMenuLevel = parseInt( gainedFocus.getAttribute( 'data-menu-level' ) );
 
-// Handle the sub-menu losing focus
-function subMenuLostFocus( event ) {
-    focusTimer = setTimeout( function() {
-        let openNav = document.querySelector('li.menu-item-has-children.open');
+    // Did we change menu levels?
+    if ( lastMenuLevel !== currentMenuLevel ) {
 
-        if ( openNav ) {
-            openNav.classList.remove( 'open' );
-            openNav.setAttribute( 'aria-expanded', 'false' === event.target.getAttribute( 'aria-expanded' ) ? 'true' : 'false' );
+        // Did we go up or down a level?
+        if ( currentMenuLevel < lastMenuLevel ) {
+            
+            // How many steps did we jump up?
+            const steps = lastMenuLevel - currentMenuLevel;
+            
+            // Check and see how many steps we need to close
+            if ( steps === 1 ) {
+                lostFocus.closest('.open').classList.remove( 'open' );
+            } else {
+                lostFocus.closest('.open').classList.remove( 'open' ); // Second level
+                lostFocus.closest('.open').closest('.open').classList.remove( 'open' ); // First Level
+            }
         }
-    }, 10 );
+    }
+}
+
+// Handle a menu link losing focus with the keyboard
+function menuLinkLoseFocus( event ) {
+    lostFocus = event.target.parentNode;
+    lastMenuLevel = parseInt( lostFocus.getAttribute( 'data-menu-level' ) );
 }
