@@ -1,6 +1,16 @@
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
+.alignfull,
+.alignwide {
+    .wp-block-group__inner-container {
+        > *:not(.alignfull):not(.alignwide) {
+            max-width: 720px;
+            max-width: 72rem;
+        }
+    }
+}
+
 .page-content {
     display: flex;
     flex-flow: row wrap;
@@ -27,6 +37,16 @@
         .page & {
             flex: 0 1 100%;
             margin-right: 0;
+        }
+
+        .home & {
+            align-items: center;
+            display: flex;
+            flex-flow: row wrap;
+
+            .home-block {
+                flex: 0 1 100%;
+            }
         }
     }
 }
