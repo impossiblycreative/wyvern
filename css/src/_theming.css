@@ -39,7 +39,7 @@
 	--text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 
 	/* Links */
-	--link-color: var(--grey);
+	--link-color: var(--dark-grey);
 	--link-color-hover: var(--black);
 
     /* Button Colors */
@@ -130,4 +130,8 @@
 
 	/* Progress Bar */
 	--progress-bar-color: linear-gradient(90deg, var(--black) 0%, var(--grey) 100%);
+
+	/* bbPress */
+	--bbpress-header-color: var(--black);
+	--bbpress-header-text-color: var(--white);
 }

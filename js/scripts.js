@@ -5,10 +5,9 @@ const searchButton = document.querySelector( '#header-search .search-submit' );
 const mobileMenuToggle = document.getElementById( 'mobile-menu-toggle' );
 const offCanvas = document.getElementById( 'off-canvas-container' );
 const offCanvasClose = document.getElementById( 'off-canvas-close' );
-const hasSubMenus = document.querySelectorAll( 'li.menu-item-has-children' );
+const hasSubMenus = document.querySelectorAll( '#header-menu .menu-item.menu-item-has-children' );
 const menuLinks = document.querySelectorAll( '.menu-item a' );
 let delayTimer;
-
 let lastMenuLevel = 0;
 let currentMenuLevel = 0;
 let gainedFocus;
@@ -43,8 +42,8 @@ if ( menuLinks ) {
 // Deal with the sub-menus
 if ( hasSubMenus ) {
     Array.prototype.forEach.call( hasSubMenus, function( element, iterator ){
-        element.addEventListener( 'mouseenter', openSubMenu );
-        element.addEventListener( 'mouseleave', closeSubMenu );
+        element.addEventListener( 'mouseenter', handleMenuItemMouseEnter );
+        element.addEventListener( 'mouseleave', handleMenuItemMouseLeave );
 
         let buttons = element.querySelectorAll( 'button' );
 
@@ -96,46 +95,56 @@ function mobileMenuClose( event ) {
     offCanvas.classList.toggle( 'active' );
 }
 
-// Open the sub-menu
-function openSubMenu( event ) {
+function handleMenuItemMouseEnter( event ) {
+
+    const hoverParent = this.parentNode;
+    currentMenuLevel = parseInt( this.getAttribute( 'data-menu-level' ) );
+    
+    if ( hoverParent.classList.contains( 'sub-menu' ) || hoverParent.classList.contains( 'menu' ) ) {
+        if ( currentMenuLevel !== lastMenuLevel ) {
+            clearTimeout(delayTimer);
+        }
+    }
 
     // Open the menu and set the ARIA attributes
     this.classList.add( 'open' );
     this.setAttribute( 'aria-expanded', 'true' );
 
     // Set the ARIA on the button as well
-    this.children[1].setAttribute( 'aria-expanded', 'true' );
-}
-
-// Close the sub-menu after
-function closeSubMenu( event ) {
-    const menu = this;
-
-    // More timer leeway for top-level menus
-    if ( menu.getAttribute( 'data-menu-level' ) === '0' ) {
-
-        // Set our timer to account for motor disabilities
-        delayTimer = setTimeout( function( event ){
-            menu.classList.remove('open');
-            menu.setAttribute( 'aria-expanded', 'false' );
-        
-            // Set the ARIA on the button as well
-            menu.children[1].setAttribute( 'aria-expanded', 'false' );
-        }, 700 );
-    } 
-    else {
-
-        // Set our timer to account for motor disabilities
-        delayTimer = setTimeout( function( event ){
-            menu.classList.remove('open');
-            menu.setAttribute( 'aria-expanded', 'false' );
-        
-            // Set the ARIA on the button as well
-            menu.children[1].setAttribute( 'aria-expanded', 'false' );
-        }, 350 );
+    if ( this.children ) {
+        this.children[1].setAttribute( 'aria-expanded', 'true' );
     }
 }
 
+function handleMenuItemMouseLeave( event ) {
+    const menu = this;
+    lastMenuLevel = parseInt( menu.getAttribute( 'data-menu-level' ) );
+
+    // Set our timer to account for motor disabilities
+    if ( menu.getAttribute( 'data-menu-level' ) === '0' ) {
+
+        delayTimer = setTimeout( function( event ){
+            menu.classList.remove('open');
+            menu.setAttribute( 'aria-expanded', 'false' );
+            currentMenuItem = null;
+        
+            // Set the ARIA on the button as well
+            if ( this.children ) {
+                menu.children[1].setAttribute( 'aria-expanded', 'false' );
+            }
+        }, 1000 );
+    } 
+    else {
+        menu.classList.remove('open');
+        menu.setAttribute( 'aria-expanded', 'false' );
+        currentMenuItem = null;
+    
+        // Set the ARIA on the button as well
+        if ( this.children ) {
+            menu.children[1].setAttribute( 'aria-expanded', 'false' );
+        }
+    }
+}
 
 // Handle toggling the sub-menu
 function toggleSubMenu( event ) {
@@ -145,7 +154,12 @@ function toggleSubMenu( event ) {
         button = button.parentNode;
     }
 
-    if ( button ) {
+    if ( button.classList.contains( 'menu-item' ) ) {
+        button.classList.toggle( 'open' );
+        button.setAttribute( 'aria-expanded', 'false' === button.getAttribute( 'aria-expanded' ) ? 'true' : 'false' );
+
+        currentParentMenu = button.parentNode.parentNode;
+    } else {
         button.parentNode.classList.toggle( 'open' );
         button.parentNode.setAttribute( 'aria-expanded', 'false' === button.parentNode.getAttribute( 'aria-expanded' ) ? 'true' : 'false' );
         button.setAttribute( 'aria-expanded', 'false' === button.getAttribute( 'aria-expanded' ) ? 'true' : 'false' );

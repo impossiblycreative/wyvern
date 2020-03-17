@@ -87,7 +87,9 @@ img.entry-header-image {
 button,
 .button,
 input[type=submit],
-.wp-block-button__link {
+.wp-block-button__link,
+#bbpress-forums #subscription-toggle .subscription-toggle,
+#bbpress-forums #favorite-toggle .favorite-toggle {
     background: var(--button-color);
     border-radius: var(--border-radius);
     color: var(--button-text-color);

@@ -24,6 +24,10 @@
         padding: 60px 0;
         padding: 6rem 0;
     }
+
+    .bbpress & {
+        padding: 0;
+    }
 }
 
 .main {
@@ -34,7 +38,8 @@
         margin-right: 3%;
 
         .home &,
-        .page & {
+        .page &,
+        .bbpress & {
             flex: 0 1 100%;
             margin-right: 0;
         }
