@@ -15,8 +15,12 @@ $colors_footer_background   = get_theme_mod( 'colors_footer_background' );
 <style type="text/css">
     :root {
         /* Fonts */
-        --font-plain: <?php echo esc_html( $typography_font_primary ); ?>, sans-serif;
-        --font-special: <?php echo esc_html( $typography_font_secondary ); ?>, serif;
+        <?php if ( $typography_font_primary ) : ?>
+            --font-plain: <?php echo esc_html( $typography_font_primary ); ?>, sans-serif;
+        <?php endif; ?>
+        <?php if ( $typography_font_secondary ) : ?>
+            --font-special: <?php echo esc_html( $typography_font_secondary ); ?>, serif;
+        <?php endif; ?>
 
         /* Header */
         --site-header-background-color: <?php echo esc_html( $colors_header_background ); ?>;

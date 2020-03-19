@@ -35,25 +35,6 @@ function wyvern_setup() {
         )
     );
 
-    /**
-     * Add support for core custom logo.
-     *
-     * @link https://codex.wordpress.org/Theme_Logo
-     */
-    add_theme_support(
-        'custom-logo',
-        array(
-            'height'      => 80,
-            'width'       => 250,
-            'flex-width'  => true,
-            'flex-height' => true,
-            'header-text' => array(
-                'site-title',
-                'site-description',
-            ),
-        )
-    );
-
     add_theme_support('editor-styles');
     add_theme_support('align-wide');
 }
