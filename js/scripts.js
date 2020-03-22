@@ -5,7 +5,7 @@ const searchButton = document.querySelector( '#header-search .search-submit' );
 const mobileMenuToggle = document.getElementById( 'mobile-menu-toggle' );
 const offCanvas = document.getElementById( 'off-canvas-container' );
 const offCanvasClose = document.getElementById( 'off-canvas-close' );
-const hasSubMenus = document.querySelectorAll( '#header-menu .menu-item.menu-item-has-children' );
+const hasSubMenus = document.querySelectorAll( '.menu-item.menu-item-has-children' );
 const menuLinks = document.querySelectorAll( '.menu-item a' );
 let delayTimer;
 let lastMenuLevel = 0;
