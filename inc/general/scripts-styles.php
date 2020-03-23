@@ -5,7 +5,7 @@
  */
 function wyvern_load_theme_assets() {
 	// Load main CSS file
-	wp_enqueue_style( 'wyvern-styles', get_template_directory_uri() . '/css/build/main.min.css', NULL, '1.0.0', 'all' );
+	wp_enqueue_style( 'wyvern-styles', get_template_directory_uri() . '/css/build/main.css', NULL, '1.0.0', 'all' );
 
 	// Google Fonts
 	$primary_font 	= get_theme_mod( 'typography_font_primary' );

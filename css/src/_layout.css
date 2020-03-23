@@ -11,23 +11,24 @@
     }
 }
 
+.alignfull {
+    max-width: 100%;
+}
+
+.alignwide {
+    margin: auto;
+    max-width: 960px;
+    max-width: 96rem;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
 .page-content {
     display: flex;
     flex-flow: row wrap;
-
-    @media (--menu-query) {
-        padding: 20px;
-        padding: 2rem;
-    }
-
-    @media (--slider-query) {
-        padding: 60px 0;
-        padding: 6rem 0;
-    }
-
-    .bbpress & {
-        padding: 0;
-    }
 }
 
 .main {

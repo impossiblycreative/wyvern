@@ -21,24 +21,8 @@ gulp.task('css', function() {
     .src('css/src/**/*.css')
         .pipe(sourcemaps.init())
             .pipe(postcss(processors))
-            .pipe(concat('main.min.css'))
+            .pipe(concat('main.css'))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('css/build'));
-});
-
-gulp.task('css-unminified', function() {
-    const processors = [
-        atImport,
-        mixins,
-        precss,
-        cssnano,
-        calc
-    ]
-  
-    return gulp
-      .src('css/src/**/*.css')
-        .pipe(postcss(processors))
-        .pipe(concat('main.css'))
         .pipe(gulp.dest('css/build'));
 });
 
@@ -52,7 +36,7 @@ gulp.task('css-editor', function() {
     ]
   
     return gulp
-      .src('css/src/editor/*.css')
+      .src('css/src/editor.css')
         .pipe(postcss(processors))
         .pipe(concat('editor.css'))
         .pipe(gulp.dest('css/build'));
@@ -60,6 +44,5 @@ gulp.task('css-editor', function() {
 
 gulp.task('watch', function() {
     gulp.watch('css/src/**/*.css', gulp.series('css-editor'));
-    gulp.watch('css/src/**/*.css', gulp.series('css-unminified'));
     gulp.watch('css/src/**/*.css', gulp.series('css'));
 });

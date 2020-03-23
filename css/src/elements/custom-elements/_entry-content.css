@@ -19,7 +19,14 @@
         padding: 2rem;
     }
 
-    .page &,
+    .page & {
+        padding: 0;
+
+        @media (--menu-query) {
+            border-radius: var(--border-radius);
+        }
+    }
+
     .bbpress & {
         padding: 20px;
         padding: 2rem;

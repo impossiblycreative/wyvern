@@ -33,7 +33,7 @@ $page_header_attributes = 'class="' . $page_header_classes . '"' . $page_header_
 	<h1 class="entry-title page-title"><?php echo esc_html( get_the_title() ); ?></h1>
 </div>
 
-<div class="wrapper page-content">
+<div class="page-content">
 	<main id="site-main" class="main" role="main">
 		<?php
 			if( have_posts() ) {

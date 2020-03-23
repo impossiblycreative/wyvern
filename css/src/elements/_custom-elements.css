@@ -14,8 +14,13 @@
 }
 
 .search-toggle {
+    display: none;
     padding: 10px 12px;
     padding: 1rem 1.2rem;
+
+    @media (--menu-query) {
+        display: inline-block;
+    }
 }
 
 .home-block {

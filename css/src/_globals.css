@@ -64,8 +64,3 @@ body {
 	overflow-x: hidden;
 	position: relative;
 }
-
-.wrapper {
-    margin: 0 auto;
-    max-width: 1440px;
-}
