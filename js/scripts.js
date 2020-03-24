@@ -132,7 +132,7 @@ function handleMenuItemMouseLeave( event ) {
             if ( this.children ) {
                 menu.children[1].setAttribute( 'aria-expanded', 'false' );
             }
-        }, 1000 );
+        }, 500 );
     } 
     else {
         menu.classList.remove('open');

@@ -29,7 +29,10 @@
 
     .slide {
         align-items: center;
+        background: var(--slide-background-color);
         border: var(--border-heavy);
+        border-radius: var(--border-radius);
+        color: var(--slide-text-color);
         display: flex;
         flex: 0 0 100%;
         flex-flow: row wrap;
@@ -41,6 +44,40 @@
 
         &:last-of-type {
             margin-right: 0;
+        }
+
+        .slide-image-container,
+        .slide-content {
+            flex: 0 1 100%;
+            width: 100%;
+
+            @media (--content-query) {
+                flex: 0 1 50%;
+                width: 50%;
+            }
+        }
+
+        .slide-image-container {
+            border-radius: var(--border-radius);
+
+            img {
+                border-radius: var(--border-radius);
+                display: block;
+                height: auto;
+                margin: 0 auto;
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+
+        .slide-content {
+            padding: 10px 0;
+            padding: 1rem 0;
+
+            @media (--content-query) {
+                padding: 20px 40px;
+                padding: 2rem 4rem;
+            }
         }
     }
 }
@@ -61,12 +98,12 @@
         .carousel-navigation-button {
             align-items: center;
             background: var(--carousel-navigation-button-color);
-            border-radius: 100%;
+            border-radius: var(--border-radius-small);
             display: flex;
             height: 20px;
             justify-content: center;
             transition: background-color var(--linear);
-            width: 20px;
+            width: 80px;
 
             &.current {
                 background: var(--carousel-navigation-button-color-current);
