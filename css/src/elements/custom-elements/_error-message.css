@@ -1,0 +1,8 @@
+.error-message {
+    background: var(--error-message-background);
+    color: var(--error-message-text-color);
+    font-weight: 700;
+    margin: 0;
+    padding: 20px;
+    padding: 2rem;
+}

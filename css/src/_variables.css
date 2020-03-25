@@ -26,6 +26,10 @@
 	--black: #000;
 	--white: #FFF;
 
+	/* Error Message Colors */
+	--error-message-background: #FFE7E7;
+	--error-message-text-color: #C7254E;
+
 	/* Social Media Colors */
 	--facebook: #1877F2;
 	--instagram: #C32AA3;

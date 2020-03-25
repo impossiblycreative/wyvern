@@ -1,0 +1,8 @@
+.wp-block-wyvern-plugin-faqs-category {
+    padding: 20px;
+    padding: 2rem;
+
+    .faqs-block-header {
+        text-align: center;
+    }
+}

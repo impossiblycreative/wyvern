@@ -15,6 +15,7 @@
 	--background-color-light: var(--white);
 	--border: 1px solid var(--black);
 	--border-radius: 10px;
+	--border-radius-inner: 6px;
 	--border-radius-small: 5px;
 	--border-radius-tiny: 3px;
 	--border: 1px solid var(--black);
@@ -95,15 +96,6 @@
 	--page-header-color: var(--black);
 	--page-header-text-color: var(--white);
 
-	/* Slides */
-	--slide-background-color: var(--white);
-	--slide-text-color: var(--black);
-	--carousel-navigation-button-color: var(--black);
-	--carousel-navigation-button-color-current: var(--grey);
-	--carousel-navigation-button-color-hover: var(--grey);
-	--carousel-scrollbar-track-color: var(--grey);
-	--carousel-scrollbar-thumb-color: var(--black);
-
 	/* Post Card Block & Cards */
 	--post-card-block-background-color: var(--black);
 	--post-card-background-color: var(--white);
@@ -134,4 +126,18 @@
 	/* bbPress */
 	--bbpress-header-color: var(--black);
 	--bbpress-header-text-color: var(--white);
+
+	/* Built-In Blocks */
+	/* Featured Posts Carousel */
+	--slide-background-color: var(--white);
+	--slide-text-color: var(--black);
+	--carousel-navigation-button-color: var(--black);
+	--carousel-navigation-button-color-current: var(--grey);
+	--carousel-navigation-button-color-hover: var(--grey);
+	--carousel-scrollbar-track-color: var(--grey);
+	--carousel-scrollbar-thumb-color: var(--black);
+
+	/* FAQs */
+	--faq-header-color: var(--grey);
+	--faq-header-text-color: var(--black);
 }
