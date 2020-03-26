@@ -5,14 +5,7 @@
     margin-bottom: 2rem;
 
     .faq-header {
-        background: var(--faq-header-color);
-        border-bottom: var(--border-heavy);
-        border-top-left-radius: var(--border-radius-inner);
-        border-top-right-radius: var(--border-radius-inner);
-        color: var(--faq-header-text-color);
         margin: 0;
-        padding: 10px 20px;
-        padding: 1rem 2rem;
     }
 
     .faq-content {

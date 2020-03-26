@@ -137,7 +137,9 @@
 	--carousel-scrollbar-track-color: var(--grey);
 	--carousel-scrollbar-thumb-color: var(--black);
 
-	/* FAQs */
-	--faq-header-color: var(--grey);
-	--faq-header-text-color: var(--black);
+	/* Accordion */
+	--accordion-header-color: var(--grey);
+	--accordion-header-text-color: var(--black);
+	--accordion-header-color-hover: var(--black);
+	--accordion-header-text-color-hover: var(--white);
 }

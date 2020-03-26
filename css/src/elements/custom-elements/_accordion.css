@@ -1,0 +1,29 @@
+.accordion-container {
+    .accordion-trigger {
+        align-items: center;
+        background: var(--accordion-header-color);
+        border-radius: var(--border-radius-inner);
+        color: var(--accordion-header-text-color);
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        font-size: inherit;
+        padding: 10px 20px;
+        padding: 1rem 2rem;
+        text-align: left;
+        width: 100%;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: var(--accordion-header-color-hover);
+            color: var(--accordion-header-text-color-hover);
+        }
+
+        &[aria-expanded='true'] {
+            border-bottom: var(--border-heavy);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+}

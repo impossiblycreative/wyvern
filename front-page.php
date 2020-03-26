@@ -16,15 +16,17 @@ get_header();
 ?>
 
 <main id="site-main" class="main" role="main">
-	<?php
-		if( have_posts() ) {
-			while( have_posts() ) {
-				the_post();
+	<div class="entry-content">
+		<?php
+			if( have_posts() ) {
+				while( have_posts() ) {
+					the_post();
 
-				the_content();
+					the_content();
+				}
 			}
-		}
-	?>
+		?>
+	</div>
 </main><!-- #site-main -->
 
 <?php
