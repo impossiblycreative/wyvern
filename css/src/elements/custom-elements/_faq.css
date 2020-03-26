@@ -8,16 +8,11 @@
         margin: 0;
     }
 
-    .faq-content {
-        padding: 20px;
-        padding: 2rem;
+    .accordion-panel {
+        border-top: var(--border-heavy);
 
-        > *:first-child {
-            margin-top: 0;
-        }
-
-        > *:last-child {
-            margin-bottom: 0;
+        &[hidden] {
+            border-top: none;
         }
     }
 }

@@ -11,6 +11,7 @@
         padding: 10px 20px;
         padding: 1rem 2rem;
         text-align: left;
+        transition: border-width var(--linear);
         width: 100%;
 
         &:hover,
@@ -21,9 +22,21 @@
         }
 
         &[aria-expanded='true'] {
-            border-bottom: var(--border-heavy);
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
+        }
+    }
+
+    .accordion-panel {
+        padding: 20px;
+        padding: 2rem;
+
+        > *:first-child {
+            margin-top: 0;
+        }
+
+        > *:last-child {
+            margin-bottom: 0;
         }
     }
 }
