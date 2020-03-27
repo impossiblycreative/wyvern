@@ -1,3 +1,33 @@
+.alignfull {
+    flex: 0 1 100%;
+    max-width: 100%;
+}
+
+.alignwide {
+    flex: 0 1 100%;
+    margin: auto;
+    max-width: 960px;
+    max-width: 96rem;
+}
+
+.alignfull,
+.alignwide {
+    .wp-block-group__inner-container {
+        margin: 0 auto;
+        max-width: 1440px;
+
+        > * {
+            max-width: 100%;
+        }
+
+        p,
+        ul,
+        ol {
+            margin-left: 0;
+        }
+    }
+}
+
 .aligncenter {
     clear: both;
     margin-left: auto;
