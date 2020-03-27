@@ -1,0 +1,22 @@
+@import '_variables.css';
+@import '_theming.css';
+
+@import 'elements/custom-elements/_accordion.css';
+@import 'elements/custom-elements/_faq.css';
+@import 'elements/custom-elements/blocks/_faqs.css';
+
+.wp-block {
+    max-width: 720px;
+
+    .alignfull,
+    &[data-align=full] {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .alignwide,
+    &[data-align=wide] {
+        margin: 0 auto;
+        max-width: 960px;
+    }
+}
