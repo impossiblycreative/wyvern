@@ -11,6 +11,7 @@ get_header();
 ?>
 
 <div class="wrapper page-content">
+	<?php echo wyvern_get_breadcrumbs(); ?>
 	<main id="site-main" class="main" role="main">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php

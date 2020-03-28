@@ -9,6 +9,26 @@
 .page-content {
     display: flex;
     flex-flow: row wrap;
+
+    .blog & {
+        padding: 20px 0;
+        padding: 2rem 0;
+
+        @media (--content-query) {
+            padding: 60px 0;
+            padding: 6rem 0;
+        }
+    }
+
+    .single & {
+        padding: 0 0 20px;
+        padding: 0 0 2rem;
+
+        @media (--content-query) {
+            padding: 0 0 60px;
+            padding: 0 0 6rem;
+        }
+    }
 }
 
 .main {
