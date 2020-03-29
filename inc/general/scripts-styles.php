@@ -35,15 +35,6 @@ function wyvern_load_theme_assets() {
 		wp_localize_script( 'wyvern-cookie-button', 'cookieButton', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 	}
 
-	// Post Block Filters - only on the home page...for now
-	if ( is_front_page() ) {
-		// Enqueue the script
-		wp_enqueue_script( 'wyvern-posts-block-filters', trailingslashit( get_template_directory_uri() ) . 'js/posts-block-filters.js', array( 'jquery' ), NULL, true );
-
-		// Localize the scripts
-		wp_localize_script( 'wyvern-posts-block-filters', 'categoriesFilter', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
-	}
-
 	// Like Button Scripts - Only needed on single posts
 	if ( is_singular( 'post' ) ) {
 		// Enqueue the scripts

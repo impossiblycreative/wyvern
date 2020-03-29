@@ -38,3 +38,16 @@ function wyvern_archive_query( $query ){
     }
 }
 add_action( 'pre_get_posts', 'wyvern_archive_query' );
+
+function wyvern_post_meta() {
+    register_post_meta( 'post', '_wyvern_likes', array(
+        'type'          => 'number',
+        'default'       => 0,
+        'single'        => true,
+        'show_in_rest'  => true,
+        'auth_callback' => function() { 
+            return current_user_can( 'edit_posts' );
+        },
+    ) );
+}
+add_action( 'init', 'wyvern_post_meta' );

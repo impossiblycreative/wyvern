@@ -4,11 +4,9 @@
     box-shadow: var(--box-shadow-style) var(--box-shadow-color), var(--box-shadow-style-alt) var(--box-shadow-color-alt);
     display: flex;
     flex-flow: column wrap;
-    margin: 0 10px 40px;
-    margin: 0 1rem 4rem;
+    margin: 0 20px 40px;
+    margin: 0 2rem 4rem;
     flex: 0 1 100%;
-    max-width: 300px;
-    min-width: 240px;
 
     &.sticky {
         background: var(--post-card-background-color-sticky);
@@ -17,14 +15,10 @@
     }
 
     @media (--menu-button-query) {
-        margin: 0 20px 40px;
-        margin: 0 2rem 4rem;
         flex: 0 1 calc(50% - 40px);
     }
 
-    @media (--content-query) {
-        margin: 0 20px 40px;
-        margin: 0 2rem 4rem;
+    @media (--menu-query) {
         flex: 0 1 calc(33% - 40px);
     }
 
@@ -34,6 +28,7 @@
         max-width: 100%;
 
         .post-card-image {
+            border-radius: var(--border-radius);
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             display: block;
@@ -50,10 +45,17 @@
         padding: 15px;
         padding: 1.5rem;
 
+        .post-excerpt,
+        .post-excerpt p {
+            margin: 0;
+        }
+
         .read-more {
             align-items: flex-end;
             display: flex;
             flex: 1 0 auto;
+            margin-top: 20px;
+            margin-top: 2rem;
 
             .read-more-button {
                 width: 100%;

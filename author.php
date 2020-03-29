@@ -35,7 +35,7 @@ if( have_posts() ) {
                     while ( have_posts() ) {
                         the_post();
 
-                        get_template_part( 'template-parts/blocks/posts/post-card' );
+                        get_template_part( 'template-parts/parts/post-card' );
                     }
                 ?>
             </div>

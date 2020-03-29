@@ -12,7 +12,7 @@
     <div class="post-card-content">
         <?php get_template_part( 'template-parts/parts/categories-list' ); ?>
 
-        <?php get_template_part( 'template-parts/blocks/posts/post-card-title' ); ?>
+        <?php get_template_part( 'template-parts/parts/post-title' ); ?>
 
         <?php get_template_part( 'template-parts/parts/post-meta' ); ?>
 

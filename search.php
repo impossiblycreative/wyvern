@@ -21,7 +21,7 @@ get_template_part( 'template-parts/page-header/page-header' );
                 while ( have_posts() ) {
                     the_post();
 
-                    get_template_part( 'template-parts/blocks/posts/post-card' );
+                    get_template_part( 'template-parts/parts/post-card' );
                 }
 
                 get_template_part( 'template-parts/parts/pagination' );
