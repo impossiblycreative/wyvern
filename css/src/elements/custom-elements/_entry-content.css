@@ -55,6 +55,7 @@
         }
     }
 
+    .blog & > *:not(.wp-block-cover):not(.alignwide):not(.alignfull),
     .single-post & > *:not(.wp-block-cover):not(.alignwide):not(.alignfull),
     .single-wyvern_faqs & > *:not(.wp-block-cover):not(.alignwide):not(.alignfull),
     .search & > *:not(.wp-block-cover):not(.alignwide):not(.alignfull) {
