@@ -81,6 +81,8 @@
 	/* Header Colors */
 	--site-header-background-color: var(--black);
 	--site-header-text-color: var(--white);
+	--footer-nav-item-color: var(--white);
+	--footer-nav-item-color-hover: var(--grey);
 
 	/* Footer Colors */
 	--site-footer-background-color: var(--black);

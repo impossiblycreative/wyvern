@@ -573,6 +573,54 @@ function wyvern_customizer_color_settings_panel( $wp_customize ) {
         ) 
     );
 
+    // Setting: Colors - Nav Item
+    $wp_customize->add_setting( 
+        'colors_footer_nav_item', 
+        array(
+            'type' => 'theme_mod',
+            'default' => '#FFFFFF',
+            'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
+        )
+    );
+
+    // Control: Colors - Nav Item
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control( $wp_customize, 
+            'colors_footer_nav_item',
+            array(
+                'label' => __( 'Menu Item', 'wyvern' ),
+                'description' => __( 'Sets the nav menu text color' ),
+                'section' => 'wyvern_color_settings_footer',
+            ) 
+        ) 
+    );
+
+    // Setting: Colors - Nav Item, Hover
+    $wp_customize->add_setting( 
+        'colors_footer_nav_item_hover', 
+        array(
+            'type' => 'theme_mod',
+            'default' => '#C0C0C0',
+            'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'wp_filter_nohtml_kses',
+        )
+    );
+
+    // Control: Colors - Nav Item, Hover
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control( $wp_customize, 
+            'colors_footer_nav_item_hover',
+            array(
+                'label' => __( 'Menu Item - Hover/Focus/Active', 'wyvern' ),
+                'description' => __( 'Sets the hover, focus, and active state color' ),
+                'section' => 'wyvern_color_settings_footer',
+            ) 
+        ) 
+    );
+
 }
 add_action( 'customize_register', 'wyvern_customizer_color_settings_panel' );
 
