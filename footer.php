@@ -13,7 +13,7 @@
 	</footer>
 
 	<!-- Off Canvas Menu Container -->
-	<?php get_template_part( 'template-parts/footer/off-canvas' ); ?>
+	<?php get_template_part( 'template-parts/off-canvas/off-canvas' ); ?>
 
 	<!-- No touch! -->
 	<?php wp_footer(); ?>

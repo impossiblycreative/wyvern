@@ -1,5 +1,5 @@
 <div id="off-canvas-container" class="off-canvas-container">
-	<?php get_template_part( 'template-parts/footer/off-canvas-branding' ); ?>
+	<?php get_template_part( 'template-parts/off-canvas/branding' ); ?>
     
     <button id="off-canvas-close" class="alt menu-toggle" title="<?php esc_html_e( 'Close', 'wyvern' ); ?>">
         <span class="fas fa-times"></span>
@@ -11,14 +11,14 @@
     </div>
 
     <nav id="off-canvas-menu" class="off-canvas-menu-container" aria-label="Primary">
-    <?php
-        if ( has_nav_menu( 'main-menu' ) ) {
-            wp_nav_menu( array(
-                'container' 		=> false,
-                'theme_location' 	=> 'main-menu',
-                'walker'            => new Wyvern_Walker_Nav_Menu(),
-            ) );
-        }
-    ?>
+        <?php
+            if ( has_nav_menu( 'main-menu' ) ) {
+                wp_nav_menu( array(
+                    'container' 		=> false,
+                    'theme_location' 	=> 'main-menu',
+                    'walker'            => new Wyvern_Walker_Nav_Menu(),
+                ) );
+            }
+        ?>
     </nav>
 </div>
