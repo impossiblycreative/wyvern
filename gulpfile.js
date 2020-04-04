@@ -8,7 +8,7 @@ const cssnano = require('cssnano');
 const calc = require('postcss-calc');
 const mixins = require('postcss-mixins');
 
-gulp.task('css', function() {
+gulp.task( 'css', function() {
   const processors = [
       atImport,
       mixins,
@@ -18,15 +18,15 @@ gulp.task('css', function() {
   ]
 
   return gulp
-    .src('css/src/**/*.css')
-        .pipe(sourcemaps.init())
-            .pipe(postcss(processors))
-            .pipe(concat('main.css'))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('css/build'));
+    .src( ['css/src/**/*.css', '!css/src/editor.css'] )
+        .pipe( sourcemaps.init() )
+            .pipe( postcss( processors ) )
+            .pipe( concat( 'main.css' ) )
+        .pipe( sourcemaps.write() )
+        .pipe( gulp.dest( 'css/build' ) );
 });
 
-gulp.task('css-editor', function() {
+gulp.task( 'css-editor', function() {
     const processors = [
         atImport,
         mixins,
