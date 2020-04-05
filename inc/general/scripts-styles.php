@@ -11,6 +11,14 @@ function wyvern_load_theme_assets() {
 	$primary_font 	= get_theme_mod( 'typography_font_primary' );
 	$secondary_font = get_theme_mod( 'typography_font_secondary' );
 
+	if ( $primary_font === 'Default' ) {
+		$primary_font = false;
+	}
+
+	if ( $secondary_font === 'Default' ) {
+		$secondary_font = false;
+	}
+
 	if ( $primary_font ) {
 		if ( $secondary_font ) {
 			wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=' . $primary_font . ':400,700|' . $secondary_font . ':400,700&display=swap' );

@@ -13,16 +13,17 @@ $colors_footer_background       = get_theme_mod( 'colors_footer_background' );
 
 $colors_footer_nav_item         = get_theme_mod( 'colors_footer_nav_item' );
 $colors_footer_nav_item_hover   = get_theme_mod( 'colors_footer_nav_item_hover' );
+
 ?>
 
 <style type="text/css">
     :root {
         /* Fonts */
-        <?php if ( $typography_font_primary ) : ?>
+        <?php if ( $typography_font_primary && ( $typography_font_primary !== 'Default' ) ) : ?>
             --font-plain: <?php echo esc_html( $typography_font_primary ); ?>, sans-serif;
         <?php endif; ?>
 
-        <?php if ( $typography_font_secondary ) : ?>
+        <?php if ( $typography_font_secondary && ( $typography_font_secondary !== 'Default' ) ) : ?>
             --font-special: <?php echo esc_html( $typography_font_secondary ); ?>, serif;
         <?php endif; ?>
 
