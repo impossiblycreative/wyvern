@@ -18,9 +18,6 @@
 
 	<!-- No touch! -->
 	<?php wp_head(); ?>
-
-	<!-- User Custom Colors -->
-	<?php get_template_part( 'template-parts/header/customizer-styles' ); ?>
 </head>
 
 <body <?php body_class(); ?>>
