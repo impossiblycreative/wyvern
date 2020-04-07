@@ -669,7 +669,7 @@ function wyvern_customizer_typography_settings_panel( $wp_customize ) {
         'typography_font_primary', 
         array(
             'label' => __( 'Primary Font', 'wyvern' ),
-            'description' => __( 'Used for most text', 'wyvern' ),
+            'description' => __( 'Used for most text. Custom font files must be added in a child theme.', 'wyvern' ),
             'type' => 'select',
             'choices' => array(
                 'Default'           => __( 'Select a font', 'wyvern' ),
@@ -685,6 +685,7 @@ function wyvern_customizer_typography_settings_panel( $wp_customize ) {
                 'Raleway'           => __( 'Raleway', 'wyvern' ),
                 'Roboto'            => __( 'Roboto', 'wyvern' ),
                 'Roboto+Slab'       => __( 'Roboto Slab', 'wyvern' ),
+                'Custom'            => __( 'Custom Font', 'wyvern' ),
             ),
             'section' => 'wyvern_typography_settings_fonts',
         ) 
@@ -706,7 +707,7 @@ function wyvern_customizer_typography_settings_panel( $wp_customize ) {
         'typography_font_secondary', 
         array(
             'label' => __( 'Secondary Font', 'wyvern' ),
-            'description' => __( 'Used for headers and other special situations', 'wyvern' ),
+            'description' => __( 'Used for headers and other special situations. Custom font files must be added in a child theme.', 'wyvern' ),
             'type' => 'select',
             'choices' => array(
                 'Default'           => __( 'Select a font', 'wyvern' ),
@@ -722,6 +723,7 @@ function wyvern_customizer_typography_settings_panel( $wp_customize ) {
                 'Raleway'           => __( 'Raleway', 'wyvern' ),
                 'Roboto'            => __( 'Roboto', 'wyvern' ),
                 'Roboto+Slab'       => __( 'Roboto Slab', 'wyvern' ),
+                'Custom'            => __( 'Custom Font', 'wyvern' ),
             ),
             'section' => 'wyvern_typography_settings_fonts',
         ) 

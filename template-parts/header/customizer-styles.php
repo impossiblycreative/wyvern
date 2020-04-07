@@ -19,11 +19,11 @@ $colors_footer_nav_item_hover   = get_theme_mod( 'colors_footer_nav_item_hover' 
 <style type="text/css">
     :root {
         /* Fonts */
-        <?php if ( $typography_font_primary && ( $typography_font_primary !== 'Default' ) ) : ?>
+        <?php if ( $typography_font_primary && ( $typography_font_primary !== 'Default' ) && ( $typography_font_primary !== 'Custom' ) ) : ?>
             --font-plain: <?php echo esc_html( $typography_font_primary ); ?>, sans-serif;
         <?php endif; ?>
 
-        <?php if ( $typography_font_secondary && ( $typography_font_secondary !== 'Default' ) ) : ?>
+        <?php if ( $typography_font_secondary && ( $typography_font_secondary !== 'Default' ) && ( $typography_font_secondary !== 'Custom' ) ) : ?>
             --font-special: <?php echo esc_html( $typography_font_secondary ); ?>, serif;
         <?php endif; ?>
 

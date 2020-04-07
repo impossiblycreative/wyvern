@@ -11,11 +11,11 @@ function wyvern_load_theme_assets() {
 	$primary_font 	= get_theme_mod( 'typography_font_primary' );
 	$secondary_font = get_theme_mod( 'typography_font_secondary' );
 
-	if ( $primary_font === 'Default' ) {
+	if ( ( $primary_font === 'Default' ) || ( $primary_font === 'Custom' ) ) {
 		$primary_font = false;
 	}
 
-	if ( $secondary_font === 'Default' ) {
+	if ( ( $secondary_font === 'Default' ) || ( $secondary_font === 'Custom' ) ) {
 		$secondary_font = false;
 	}
 
