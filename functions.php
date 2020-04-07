@@ -30,8 +30,4 @@ require get_template_directory() . '/inc/ajax/like-button.php';
 // Classes
 require get_template_directory() . '/inc/classes/class-wyvern-nav-walker.php';
 
-
-// Customizer
-require get_template_directory() . '/inc/customizer/register.php';
-
 add_theme_support( 'responsive-embeds' );
