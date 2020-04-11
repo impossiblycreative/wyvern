@@ -73,16 +73,19 @@
     }
 
     .posts-container {
-        align-items: flex-start;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
         padding: 20px;
         padding: 2rem;
         
         @media (--content-query) {
             padding: 40px;
             padding: 4rem;
+        }
+
+        .wrapper {
+            align-items: flex-start;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
         }
 
         .button-container {
