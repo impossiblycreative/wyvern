@@ -20,7 +20,7 @@ function wyvern_load_theme_assets() {
 	}
 
 	if ( $primary_font ) {
-		if ( $secondary_font ) {
+		if ( $secondary_font && ( $secondary_font !== $primary_font ) ) {
 			wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=' . $primary_font . ':400,700|' . $secondary_font . ':400,700&display=swap' );
 		} else {
 			wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=' . $primary_font . ':400,700&display=swap' );
