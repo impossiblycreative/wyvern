@@ -57,6 +57,7 @@
         }
 
         p.copyright {
+            color: var(--copyright-text-color);
             margin: 0;
 
             span {
