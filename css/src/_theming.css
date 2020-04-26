@@ -144,4 +144,8 @@
 	--accordion-header-text-color: var(--black);
 	--accordion-header-color-hover: var(--black);
 	--accordion-header-text-color-hover: var(--white);
+
+	/* Newsletter */
+	--newsletter-background: var(--grey);
+	--newsletter-text-color: var(--black);
 }
