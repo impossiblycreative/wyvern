@@ -103,6 +103,7 @@
                 }
 
                 .post-nav-image-container {
+                    border-radius: 0;
                     border-top-left-radius: var(--border-radius);
                     border-bottom-left-radius: var(--border-radius);
                     
@@ -132,11 +133,13 @@
                 }
     
                 .post-nav-image-container {
+                    border-radius: 0;
                     border-top-right-radius: var(--border-radius);
                     border-bottom-right-radius: var(--border-radius);
                     
                     .scrim,
                     .post-nav-image {
+                        border-radius: 0;
                         border-top-right-radius: var(--border-radius);
                         border-bottom-right-radius: var(--border-radius);
                     }

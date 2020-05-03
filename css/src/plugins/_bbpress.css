@@ -3,6 +3,7 @@
     display: flex;
     flex-flow: row-reverse wrap;
     justify-content: space-between;
+    margin-bottom: 0;
 
     .single-forum & {
         flex-flow: row wrap;
@@ -10,8 +11,7 @@
 
     .bbp-search-form {
         flex: 0 1 100%;
-        margin-bottom: 10px;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
 
         @media (--menu-button-query) {
             flex: 0 0 300px;
@@ -84,6 +84,10 @@
         }
     }
 
+    ul.bbp-topics {
+        margin-top: 0;
+    }
+
     #favorite-toggle,
     #subscription-toggle {
         color: transparent;
@@ -98,4 +102,14 @@ div.bbp-template-notice,
 .bbp-topic-form,
 .bbp-reply-form {
     flex: 0 1 100%;
+}
+
+div.bbp-template-notice {
+    margin-top: 20px;
+}
+
+.topic {
+    #bbpress-forums {
+        flex-flow: row wrap;
+    }
 }

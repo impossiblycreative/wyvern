@@ -31,6 +31,10 @@
             padding: 0 0 6rem;
         }
     }
+
+    .bbpress & {
+        padding: 0;
+    }
 }
 
 .main {
