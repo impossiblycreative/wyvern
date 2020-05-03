@@ -76,3 +76,57 @@
         margin-left: 2rem;
     }
 }
+
+.wp-block-image {
+    .alignleft {
+        margin-right: 20px;
+        margin-right: 2rem;
+    }
+
+    .alignright {
+        margin-left: 20px;
+        margin-left: 2rem;
+    }
+}
+
+blockquote {
+    display: flex;
+    flex-flow: row wrap;
+    padding-left: 40px;
+    padding-left: 4rem;
+    position: relative;
+
+    &:before {
+        content: "\f10d";
+        font-family: "Font Awesome 5 Free";
+        font-size: 30px;
+        font-size: 3rem;
+        font-weight: 900;
+        left: 0;
+        margin: 0 10px 10px 0;
+        margin: 0 1rem 1rem 0;
+        position: absolute;
+        top: 10px;
+    }
+
+    p,
+    cite {
+        flex: 0 1 100%;
+    }
+
+    p:first-of-type {
+        margin-top: 0;
+    }
+
+    p:last-of-type {
+        margin-bottom: 10px;
+        margin-bottom: 1rem;
+    }
+
+    cite {
+        border-top: var(--border);
+        padding-top: 10px;
+        padding-top: 1rem;
+        text-align: right;
+    }
+}
