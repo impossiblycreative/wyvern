@@ -1,6 +1,7 @@
 .post-navigation {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-between;
     margin: 60px 20px;
     margin: 6rem 2rem;
     position: relative;
@@ -24,7 +25,7 @@
         transition: background-color var(--linear), color var(--linear);
 
         @media (--menu-query) {
-            flex: 0 1 50%;
+            flex: 0 1 49.5%;
         }
 
         .post-nav-image-container {
@@ -49,6 +50,8 @@
             }
 
             .post-nav-image {
+                border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
                 display: block;
                 height: auto;
                 margin: 0;

@@ -4,11 +4,11 @@
     background: var(--progress-bar-color);
     left: 0;
     position: fixed;
-    top: 12px;
+    top: 0;
     width: auto;
 
     .admin-bar & {
-        top: 44px;
+        top: 32px;
     }
 
     .progress-bar-icon {
