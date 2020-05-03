@@ -1,0 +1,97 @@
+.wp-block-wyvern-plugin-featured-posts {
+    .wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        padding: 20px 0;
+        padding: 2rem 0;
+    }
+}
+
+.featured-post-container {
+    align-items: center;
+    background: var(--slide-background-color);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    border-width: 3px;
+    color: var(--slide-text-color);
+    display: flex;
+    flex: 0 1 100%;
+    flex-flow: row wrap;
+    margin: 0 0 20px;
+    margin: 0 0 2rem;
+    padding: 10px;
+    padding: 1rem;
+
+    &.standard {
+        @media (--content-query) {
+            flex: 0 1 32%;
+            margin: 0;
+        }
+
+        &:nth-of-type(3) {
+            @media (--content-query) {
+                margin: 0 2%;
+            }
+        }
+    }
+
+    .post-image-container,
+    .post-content {
+        flex: 0 1 100%;
+        width: 100%;
+    }
+
+    .post-image-container {
+        border-radius: var(--border-radius);
+        margin-bottom: 10px;
+        margin-bottom: 1rem;
+
+        img {
+            border-radius: var(--border-radius);
+            display: block;
+            height: auto;
+            margin: 0 auto;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    .post-content {
+        padding: 0;
+
+        .post-title {
+            font-size: var(--s1);
+            margin-bottom: 0;
+        }
+    }
+
+    &.big {
+        margin-bottom: 20px;
+        margin-bottom: 2rem;
+
+        .post-image-container,
+        .post-content {
+            @media (--content-query) {
+                flex: 0 1 50%;
+                width: 50%;
+            }
+        }
+
+        .post-image-container {
+            @media (--content-query) {
+                margin-bottom: 0;
+                padding-right: 20px;
+                padding-right: 2rem;
+            }
+        }
+
+        .post-content {
+            .post-title {
+                font-size: var(--s2);
+                margin-bottom: 10px;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
