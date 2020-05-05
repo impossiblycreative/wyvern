@@ -26,7 +26,7 @@
                 #bbp_search {
                     border: var(--border-heavy);
                     border-radius: var(--border-radius);
-                    flex: 0 1 calc(100% - 100px);
+                    flex: 0 1 calc(100% - 104px);
                     font-size: 16px;
                     font-size: 1.6rem;
                     margin-right: 4px;
