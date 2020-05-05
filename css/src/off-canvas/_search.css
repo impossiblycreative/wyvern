@@ -2,7 +2,7 @@
     .search-container {
         display: block;
 
-        @media (--menu-button-query) {
+        @media (--menu-query) {
             display: none;
         }
 
