@@ -20,9 +20,14 @@
 
     .cookie-bar-text {
         color: var(--cookie-bar-text-color);
+        flex: 0 1 100%;
         line-height: 1;
         margin: 0 20px;
         margin: 0 2rem;
+
+        @media (--content-query) {
+            flex: 0 1 auto;
+        }
     }
 
     button,
