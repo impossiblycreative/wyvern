@@ -1,4 +1,11 @@
-<h1 class="page-header-title"><?php echo esc_html( get_the_archive_title() ); ?></h1>
+<h1 class="page-header-title">
+    <?php if ( is_404() ) : ?>
+        <?php esc_html_e( 'Error: 404 - Not Found', 'be-found-online' ); ?>
+    <?php else : ?>
+        <?php echo esc_html( get_the_archive_title() ); ?>
+    <?php endif; ?>
+</h1>
+
 <div class="page-header-meta">
     <?php if ( is_search() ) :
             $count = $GLOBALS['wp_query']->found_posts;
