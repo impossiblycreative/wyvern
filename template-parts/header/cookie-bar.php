@@ -1,4 +1,5 @@
 <?php
+    $use_cookie_bar = get_theme_mod( 'cookie_notice_enabled' );
     $site_title = get_bloginfo( 'name' );
     $site_title = sanitize_title( $site_title );
 	$cookie_name = $site_title . '_cookie_consent';
@@ -22,8 +23,10 @@
     }
 ?>
 
-<div class="cookie-bar <?php echo $has_cookie ? 'hide' : 'show'; ?>">
-    <p class="cookie-bar-text"><?php echo esc_html( $cookie_text ) ?></p>
-    <button id="cookie-button" data-nonce="<?php echo $nonce; ?>"><?php esc_html_e( 'Okay', 'wyvern' ); ?></button>
-    <a class="button" href="<?php echo esc_url( get_the_permalink( $cookie_page ) ); ?>"><?php echo esc_html( $cookie_button_text ); ?></a>
-</div>
+<?php if ( $use_cookie_bar ) : ?>
+    <div class="cookie-bar <?php echo $has_cookie ? 'hide' : 'show'; ?>">
+        <p class="cookie-bar-text"><?php echo esc_html( $cookie_text ) ?></p>
+        <button id="cookie-button" data-nonce="<?php echo $nonce; ?>"><?php esc_html_e( 'Okay', 'wyvern' ); ?></button>
+        <a class="button" href="<?php echo esc_url( get_the_permalink( $cookie_page ) ); ?>"><?php echo esc_html( $cookie_button_text ); ?></a>
+    </div>
+<?php endif; ?>
