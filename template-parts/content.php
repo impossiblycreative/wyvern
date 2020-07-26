@@ -18,11 +18,11 @@
         <div class="featured-image-container">
             <?php the_post_thumbnail( 'single-post', array( 'class' => 'entry-header-image' ) ); ?>
 
-        <?php if ( !empty( $featured_video ) ) : ?>
-            <div class="featured-video-container">
-                <?php echo wp_oembed_get( $featured_video, array( 'showinfo' => 0, 'modestbranding' => 1 ) ); ?>
-            </div>
-        <?php endif; ?>
+            <?php if ( !empty( $featured_video ) ) : ?>
+                <div class="featured-video-container">
+                    <?php echo wp_oembed_get( $featured_video, array( 'showinfo' => 0, 'modestbranding' => 1 ) ); ?>
+                </div>
+            <?php endif; ?>
         </div>
     <?php endif; ?>
 
