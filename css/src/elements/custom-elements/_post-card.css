@@ -26,6 +26,7 @@
         display: block;
         margin: 0;
         max-width: 100%;
+        position: relative;
 
         .post-card-image {
             border-radius: var(--border-radius);
@@ -35,6 +36,18 @@
             height: auto;
             margin: 0 auto;
             max-width: 100%;
+        }
+
+        .video-icon {
+            color: var(--video-icon-color);
+            font-size: 40px;
+            font-size: 4rem;
+            left: 0;
+            padding: 10px;
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            z-index: 2;
         }
     }
 

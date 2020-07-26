@@ -1,6 +1,13 @@
 .post {
     border-radius: var(--border-radius);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     box-shadow: var(--box-shadow-style) var(--box-shadow-color), var(--box-shadow-style-alt) var(--box-shadow-color-alt);
+
+    @media (--content-query) {
+        border-bottom-left-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+    }
 }
 
 .post-title {

@@ -38,6 +38,7 @@
 	--text-color-medium: var(--grey);
 	--text-color-light: var(--white);
 	--text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	--video-icon-color: var(--white);
 
 	/* Links */
 	--link-color: var(--dark-grey);

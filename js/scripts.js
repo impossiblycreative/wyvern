@@ -7,6 +7,8 @@ const offCanvas = document.getElementById( 'off-canvas-container' );
 const offCanvasClose = document.getElementById( 'off-canvas-close' );
 const hasSubMenus = document.querySelectorAll( '.menu-item.menu-item-has-children' );
 const menuLinks = document.querySelectorAll( '.menu-item a' );
+const featuredBox = document.querySelector( '.featured-image-container' );
+const featuredVideo = document.querySelector( '.featured-video-container' );
 let delayTimer;
 let lastMenuLevel = 0;
 let currentMenuLevel = 0;
@@ -53,6 +55,17 @@ if ( hasSubMenus ) {
     } );
 }
 
+if ( featuredBox, featuredVideo ) {
+    let observer;
+    let options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.25
+    };
+
+    observer = new IntersectionObserver( scrollPastVideo, options );
+    observer.observe( featuredBox );
+}
 
 function searchToggleClick( event ) {
     const searchContainer = document.getElementById( 'header-search' );
@@ -199,4 +212,15 @@ function menuLinkGainFocus( event ) {
 function menuLinkLoseFocus( event ) {
     lostFocus = event.target.parentNode;
     lastMenuLevel = parseInt( lostFocus.getAttribute( 'data-menu-level' ) );
+}
+
+// Handle scrolling past a featured video 
+function scrollPastVideo( changes, observer ) {
+    changes.forEach( change => {
+        if ( change.isIntersecting ) {
+            featuredBox.classList.remove( 'floating-video' );
+        } else {
+            featuredBox.classList.add( 'floating-video' );
+        }
+    } );
 }

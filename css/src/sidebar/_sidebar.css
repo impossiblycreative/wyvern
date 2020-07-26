@@ -2,7 +2,7 @@
     padding: 20px;
     padding: 2rem;
 
-    @media (--menu-query) {
+    @media (--content-query) {
         padding: 0;
     }
 

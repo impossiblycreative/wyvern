@@ -79,13 +79,27 @@
 
 .wp-block-image {
     .alignleft {
-        margin-right: 20px;
-        margin-right: 2rem;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media (--content-query) {
+            float: left;
+            margin-right: 20px;
+            margin-right: 2rem;
+        }
     }
 
     .alignright {
-        margin-left: 20px;
-        margin-left: 2rem;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media (--content-query) {
+            float: right;
+            margin-left: 20px;
+            margin-left: 2rem;
+        }
     }
 }
 

@@ -23,12 +23,12 @@
     }
 
     .single & {
-        padding: 0 0 20px;
+        padding: 0 0ß 20px;
         padding: 0 0 2rem;
 
         @media (--content-query) {
-            padding: 0 0 60px;
-            padding: 0 0 6rem;
+            padding: 0 20px 60px;
+            padding: 0 2rem 6rem;
         }
     }
 

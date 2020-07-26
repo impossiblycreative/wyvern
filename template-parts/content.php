@@ -8,12 +8,24 @@
  */
 ?>
 
-<header class="<?php echo has_post_thumbnail() ? 'entry-header has-image' : 'entry-header' ; ?>">
-    <?php 
-    if ( has_post_thumbnail() ) {
-        the_post_thumbnail( 'single-post', array( 'class' => 'entry-header-image' ) );
-    }
-    ?>
+<?php
+    $featured_video     = get_post_meta( get_the_ID(), 'featured_video', true );
+    $has_featured_image = has_post_thumbnail();
+?>
+
+<header class="<?php echo $has_featured_image ? 'entry-header has-image' : 'entry-header' ; ?>">
+    <?php if ( $has_featured_image ) : ?>
+        <div class="featured-image-container">
+            <?php the_post_thumbnail( 'single-post', array( 'class' => 'entry-header-image' ) ); ?>
+
+        <?php if ( !empty( $featured_video ) ) : ?>
+            <div class="featured-video-container">
+                <?php echo wp_oembed_get( $featured_video, array( 'showinfo' => 0, 'modestbranding' => 1 ) ); ?>
+            </div>
+        <?php endif; ?>
+        </div>
+    <?php endif; ?>
+
     <div class="entry-header-content">
         <?php get_template_part( 'template-parts/parts/categories-list' ); ?>
 
