@@ -2,7 +2,7 @@
 $post_id = get_the_ID();
 $nonce = wp_create_nonce( 'wyvern_like_button_nonce' );
 $like_link = admin_url( 'admin-ajax.php?action=wyvern_like_button&post_id=' . $post_id . '&nonce=' . $nonce );
-$tweet_url = 'https://twitter.com/intent/tweet?text=' . '' . '&hashtags=' . '' ;
+$tweet_url = 'https://twitter.com/intent/tweet?text=' . esc_html( get_theme_mod( 'twitter_default_text') ) . '&hashtags=' . esc_html( get_theme_mod( 'twitter_default_hashtags') ) ;
 $pinterest_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' );
 ?>
 <ul class="social-action-buttons">
