@@ -59,6 +59,6 @@
     .single-post & > *:not(.wp-block-cover):not(.alignwide):not(.alignfull),
     .single-wyvern_faqs & > *:not(.wp-block-cover):not(.alignwide):not(.alignfull),
     .search & > *:not(.wp-block-cover):not(.alignwide):not(.alignfull) {
-        max-width: 100%;
+        max-width: calc(100vw - 40px);
     }
 }
