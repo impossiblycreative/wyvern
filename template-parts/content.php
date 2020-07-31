@@ -37,14 +37,17 @@
 
 <div class="entry-content">
     <?php $disclaimer_page = get_theme_mod( 'affiliate_link_notification_page' ); ?>
+    <?php $show_disclaimer = get_post_meta( get_the_ID(), 'contains_affiliate_links', true ); ?>
 
-    <?php if ( $disclaimer_page ) : ?>
-    <p class="affiliate-notice">
-        <?php echo esc_html( get_theme_mod( 'affiliate_link_notification_text' ) ); ?>
-        <a class="disclaimer-link" href="<?php echo esc_url( get_permalink( $disclaimer_page ) ); ?>">
-            <?php echo esc_html( get_the_title( $disclaimer_page ) ); ?>
-        </a>
-    </p>
+    <?php if ( $disclaimer_page && $show_disclaimer ) : ?>
+        <p class="affiliate-notice">
+            <span class="disclaimer-text">
+                <?php echo esc_html( get_theme_mod( 'affiliate_link_notification_text' ) ); ?>
+            </span>
+            <a class="button disclaimer-link" href="<?php echo esc_url( get_permalink( $disclaimer_page ) ); ?>">
+                <?php echo esc_html( get_the_title( $disclaimer_page ) ); ?>
+            </a>
+        </p>
     <?php endif; ?>
 
     <?php the_content(); ?>
