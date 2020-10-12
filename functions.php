@@ -29,5 +29,3 @@ require get_template_directory() . '/inc/ajax/like-button.php';
 
 // Classes
 require get_template_directory() . '/inc/classes/class-wyvern-nav-walker.php';
-
-add_theme_support( 'responsive-embeds' );

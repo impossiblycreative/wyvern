@@ -15,7 +15,15 @@ if ( ! function_exists( 'wyvern_get_breadcrumbs' ) ) {
             <?php if ( is_single() ) : ?>
                 <?php $post_id            = get_the_ID(); ?>
     
-                <?php if ( get_post_type( $post_id ) === 'wyvern_faqs' ) : ?>
+                <?php if ( get_post_type( $post_id ) === 'product' ) : ?>
+                    <li class="breadcrumb" itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+                        <a href="<?php echo esc_url( get_permalink( woocommerce_get_page_id( 'shop' ) ) ); ?>" itemprop="item">
+                            <span itemprop="name"><?php esc_html_e( 'Shop' ); ?></span>
+                            <meta itemprep="position" content="2" />
+                        </a>
+                        <span class="separator"><span class="fas fa-angle-double-right"></span></span>
+                    </li>
+                <?php elseif ( get_post_type( $post_id ) === 'wyvern_faqs' ) : ?>
                     <?php
                         $post_terms = wp_get_post_terms( $post_id, 'wyvern_faq_categories' );
                         $first_term = get_category( $post_terms[0] );
