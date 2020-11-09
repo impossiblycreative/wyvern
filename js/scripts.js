@@ -30,7 +30,10 @@ if ( searchInput && searchButton ) {
 // Toggle the mobile menu
 if ( mobileMenuToggle ) {
     mobileMenuToggle.addEventListener( 'click', mobileMenuClick );
-    offCanvasClose.addEventListener( 'click', mobileMenuClose );
+
+    if ( offCanvasClose ) {
+        offCanvasClose.addEventListener( 'click', mobileMenuClose );
+    }
 }
 
 // Listen for focus events on our menu links
