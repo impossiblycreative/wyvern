@@ -105,7 +105,10 @@ function mobileMenuClick( event ) {
     const offCanvasSiteLink = document.querySelector( '#off-canvas-container .site-logo-link' );
     mobileMenuToggle.setAttribute( 'aria-expanded', 'false' === mobileMenuToggle.getAttribute( 'aria-expanded' ) ? 'true' : 'false' );
     offCanvas.classList.toggle( 'active' );
-    offCanvasSiteLink.focus();
+
+    if ( offCanvasSiteLink ) {
+        offCanvasSiteLink.focus();
+    }
 }
 
 // Close the mobile menu
