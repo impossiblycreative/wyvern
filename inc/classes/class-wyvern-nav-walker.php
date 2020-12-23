@@ -16,9 +16,9 @@ class Wyvern_Walker_Nav_Menu extends Walker_Nav_Menu {
         // Open the list item, add aria-expanded if children present
         if ( $dropdown ) {
             $aria_text = 'aria-expanded="false"';
-            $output .= '<li id="' . $item->ID . '" class="' . implode( ' ', $classes ) . '"' . 'data-menu-level="' . $depth . '"' . $aria_text . '>';
+            $output .= '<li id="' . $item->ID . '" class="' . implode( ' ', $classes ) . '"' . ' data-menu-level="' . $depth . '"' . $aria_text . '>';
         } else {
-            $output .= '<li id="' . $item->ID . '" class="' . implode( ' ', $classes ) . '"' . 'data-menu-level="' . $depth . '">';
+            $output .= '<li id="' . $item->ID . '" class="' . implode( ' ', $classes ) . '"' . ' data-menu-level="' . $depth . '">';
         }
 
         // Use semantic markup/remove empty links
