@@ -15,6 +15,7 @@ require get_template_directory() . '/inc/general/sidebars.php';
 require get_template_directory() . '/inc/general/body-class.php';
 require get_template_directory() . '/inc/general/content.php';
 require get_template_directory() . '/inc/general/breadcrumbs.php';
+require get_template_directory() . '/inc/general/taxonomy-meta.php';
 
 
 // Widgets
